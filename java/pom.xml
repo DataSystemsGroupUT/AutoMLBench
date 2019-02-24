@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ee.ut.bigdata</groupId>
+    <artifactId>automl-benchmarking</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <autoweka.jar>${basedir}/lib/autoweka-2.6/autoweka.jar</autoweka.jar>
+    </properties>
+
+    <dependencies>
+        <!-- AutoWEKA-->
+        <dependency>
+            <groupId>automl</groupId>
+            <artifactId>autoweka</artifactId>
+            <version>2.6</version>
+            <scope>system</scope>
+            <systemPath>${autoweka.jar}</systemPath>
+        </dependency>
+
+        <!-- ML-Plan -->
+        <dependency>
+            <groupId>de.upb.isys</groupId>
+            <artifactId>mlplan</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- PropertiesUtils -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>ailibs</id>
+            <name>AILibs</name>
+            <url>https://nexus.cs.upb.de/repository/sfb901-snapshots/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>ee.ut.bigdata.impl.AutoWekaBenchmark</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
