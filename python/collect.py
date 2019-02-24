@@ -1,7 +1,9 @@
 import argparse
 import json
-from os import listdir
-from os.path import isdir, join
+from os import listdir, makedirs
+from os.path import isdir, join, exists
+
+import pandas as pd
 
 
 def collect(output_dir: str, dataframe_dir: str):
@@ -14,8 +16,26 @@ def collect(output_dir: str, dataframe_dir: str):
                     with open(join(benchmark_dir, dataset)) as dataset_file:
                         result = json.load(dataset_file)
                         data.setdefault(benchmark, dict())[dataset] = result
-    print(data)
-    # TODO
+
+    if not exists(dataframe_dir):
+        makedirs(dataframe_dir)
+
+    for benchmark, datasets in data.items():
+        benchmark_data = {}
+        for dataset, runs in datasets.items():
+            dataset_data = {}
+            run_values = {}
+            for i, run in enumerate(runs):
+                for k, v in run.items():
+                    dataset_data['{}_{}'.format(k, i + 1)] = v
+
+                    if k not in ['error', 'model']:
+                        run_values.setdefault(k, []).append(v)
+            for k, vs in run_values.items():
+                dataset_data[k] = sum(vs) / len(vs)
+            benchmark_data[dataset] = dataset_data
+        df = pd.DataFrame.from_dict(benchmark_data, orient='index')
+        df.to_csv(join(dataframe_dir, benchmark + '.csv'))
 
 
 if __name__ == '__main__':
