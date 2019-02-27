@@ -2,9 +2,8 @@ import json
 import os
 import time
 from abc import ABC, abstractmethod
-from multiprocessing import Process
 from os.path import basename, join
-from typing import Dict
+from utils import Thread
 
 import pandas as pd
 from autosklearn.classification import AutoSklearnClassifier
@@ -24,13 +23,6 @@ class ModelBenchmark(ABC):
         Benchmark the model on a dataset and saves results to a directory
         '''
         pass
-
-    def _timeit(self, func: callable, log: Dict, param_name: str = 'time'):
-        time_start = time.time()
-        res = func()
-        time_end = time.time()
-        log[param_name] = time_end - time_start
-        return res
 
     def _output(self, dataset_file, output_dir, results = None):
         model_name = self.__class__.__name__
@@ -56,25 +48,31 @@ class SklearnBenchmark(ModelBenchmark, ABC):
             model = self._init_model(time_limit)
 
             result = {}
+            time_start, time_end = time.time(), None
             try:
-                train_process = Process(target=self._fit_model(model, X_train, y_train, result))
-                train_process.start()
-                train_process.join(timeout=time_limit * 60 * 1.1)
+                train_thread = Thread(target=self._fit_model, args=(model, X_train, y_train))
+                train_thread.start()
+                train_thread.join(timeout=time_limit * 60 * 1.1)
+                time_end = time.time()
 
-                if train_process.is_alive():
-                    train_process.terminate()
+                if train_thread.is_alive():
+                    train_thread.terminate()
                     result['error'] = 'Timeout'
                 else:
                     result.update(self._evaluate(model, X_test, y_test))
                     result['model'] = str(self._best_model(model))
             except Exception as e:
                 result['error'] = str(e)
+            finally:
+                if time_end is None:
+                    time_end = time.time()
+                result['time'] = time_end - time_start
             results.append(result)
 
         self._output(dataset_file, output_dir, results)
 
-    def _fit_model(self, model, X, y, result):
-        self._timeit(lambda: model.fit(X, y), result, 'time')
+    def _fit_model(self, model, X, y):
+        model.fit(X, y)
 
     @abstractmethod
     def _init_model(self, time_limit: int = None):
@@ -108,7 +106,8 @@ class SklearnBenchmark(ModelBenchmark, ABC):
 class AutoSklearnBenchmark(SklearnBenchmark):
 
     def _init_model(self, time_limit: int = None):
-        return AutoSklearnClassifier(time_left_for_this_task=time if time is None else 60 * time_limit)
+        return AutoSklearnClassifier(time_left_for_this_task=time if time is None else 60 * time_limit,
+                                     ml_memory_limit=6144)
 
     def _best_model(self, model):
         return model.get_models_with_weights()

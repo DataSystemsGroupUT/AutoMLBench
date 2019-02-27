@@ -3,6 +3,7 @@ import json
 from os import listdir, makedirs
 from os.path import isdir, join, exists
 
+import numpy as np
 import pandas as pd
 
 
@@ -29,10 +30,11 @@ def collect(output_dir: str, dataframe_dir: str):
                 for k, v in run.items():
                     dataset_data['{}_{}'.format(k, i + 1)] = v
 
-                    if k not in ['error', 'model']:
+                    if k not in ['time', 'error', 'model']:
                         run_values.setdefault(k, []).append(v)
             for k, vs in run_values.items():
-                dataset_data[k] = sum(vs) / len(vs)
+                dataset_data[k + '_mean'] = np.mean(vs)
+                dataset_data[k + '_std'] = np.std(vs)
             benchmark_data[dataset] = dataset_data
         df = pd.DataFrame.from_dict(benchmark_data, orient='index')
         df.to_csv(join(dataframe_dir, benchmark + '.csv'))
