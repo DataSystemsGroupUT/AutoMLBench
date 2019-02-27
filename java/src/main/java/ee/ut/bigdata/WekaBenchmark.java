@@ -31,24 +31,8 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			int testSize = data.numInstances() - trainSize;
 			Instances train = new Instances(data, 0, trainSize);
 			Instances test = new Instances(data, trainSize, testSize);
-
 			C classifier = initClassifier(timeLimit);
-
-			BenchmarkResult result = new BenchmarkResult();
-			try {
-				long timeStart = System.currentTimeMillis();
-				classifier.buildClassifier(train);
-				long timeEnd = System.currentTimeMillis();
-				result.setTime(Math.round((timeEnd - timeStart) / 1000.0));
-
-				Evaluation eval = new Evaluation(train);
-				eval.evaluateModel(classifier, test);
-
-				result.setAccuracy(eval.pctCorrect() / 100.0);
-				result.setModel(getBestModel(classifier, eval));
-			} catch (Exception e) {
-				result.setError(e.toString());
-			}
+			BenchmarkResult result = benchmarkResult(classifier, train, test, timeLimit);
 			results.add(result);
 		}
 
@@ -72,6 +56,46 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		}
 	}
 
+	private BenchmarkResult benchmarkResult(C classifier, Instances train, Instances test, int timeLimit) {
+		BenchmarkResult result = new BenchmarkResult();
+		Thread trainingThread = new Thread(() -> {
+			try {
+				classifier.buildClassifier(train);
+			} catch (InterruptedException e) {
+				// Ignore
+			} catch (Exception e) {
+				result.setError(e.getMessage());
+			}
+		});
+		long timeStart = System.currentTimeMillis();
+		long timeEnd = 0;
+		try {
+			trainingThread.start();
+			trainingThread.join((long)(timeLimit * 60000 * 1.1));
+			timeEnd = System.currentTimeMillis();
+
+			if (trainingThread.isAlive()) {
+				trainingThread.interrupt();
+				result.setError("Timeout");
+			} else if (result.getError() == null) {
+				Evaluation eval = new Evaluation(train);
+				eval.evaluateModel(classifier, test);
+				result.setAccuracy(eval.pctCorrect() / 100.0);
+				result.setPrecision(eval.weightedPrecision());
+				result.setRecall(eval.weightedRecall());
+				result.setF1score(eval.weightedFMeasure());
+				result.setModel(getBestModel(classifier, eval));
+			}
+		} catch (Exception e) {
+			result.setError(e.toString());
+		} finally {
+			if (timeEnd == 0)
+				timeEnd = System.currentTimeMillis();
+			result.setTime(Math.round((timeEnd - timeStart) / 1000.0));
+		}
+		return result;
+	}
+
 	private void output(List<BenchmarkResult> results, String dataset, String output) {
 		Gson gson = new Gson();
 		String json = gson.toJson(results);
@@ -89,13 +113,13 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		}
 	}
 
-	protected void runClassifier(String[] args) {
-		if (args.length < 3)
-			throw new IllegalArgumentException("Not enough arguments. Usage: <dataset> <output>");
+	public void runClassifier(String[] args) {
+		if (args.length < 4)
+			throw new IllegalArgumentException("Not enough arguments. Usage: <dataset> <output> <timeLimit> <nRuns>");
 		String dataset = args[0];
 		String output = args[1];
 		int timeLimit = Integer.parseInt(args[2]);
-		int nRuns = args.length > 3? Integer.parseInt(args[3]): 3;
+		int nRuns = Integer.parseInt(args[3]);
 		float split = 0.75f;
 
 		benchmark(dataset, output, timeLimit, nRuns, split);

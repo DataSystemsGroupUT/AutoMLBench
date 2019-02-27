@@ -1,5 +1,6 @@
 package ee.ut.bigdata.impl;
 
+/*
 import de.upb.crc901.mlplan.multiclass.wekamlplan.MLPlanWekaBuilder;
 import de.upb.crc901.mlplan.multiclass.wekamlplan.weka.WekaMLPlanWekaClassifier;
 import ee.ut.bigdata.WekaBenchmark;
@@ -8,7 +9,7 @@ import weka.classifiers.evaluation.Evaluation;
 
 import java.io.IOException;
 import java.util.Properties;
-
+*/
 public class MlPlanBenchmark {/* extends WekaBenchmark<WekaMLPlanWekaClassifier>{
 
 	@Override

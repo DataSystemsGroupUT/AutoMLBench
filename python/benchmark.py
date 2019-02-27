@@ -98,8 +98,7 @@ class SklearnBenchmark(ModelBenchmark, ABC):
             'accuracy': accuracy_score(y, predictions),
             'precision': precision_score(y, predictions, average='weighted'),
             'recall': recall_score(y, predictions, average='weighted'),
-            'f1_score': f1_score(y, predictions, average='weighted')
-            #TODO additional metrics
+            'f1score': f1_score(y, predictions, average='weighted')
         }
 
 

@@ -8,10 +8,6 @@
     <artifactId>automl-benchmarking</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <properties>
-        <autoweka.jar>${basedir}/lib/autoweka-2.6/autoweka.jar</autoweka.jar>
-    </properties>
-
     <dependencies>
         <!-- AutoWEKA-->
         <dependency>
@@ -19,7 +15,7 @@
             <artifactId>autoweka</artifactId>
             <version>2.6</version>
             <scope>system</scope>
-            <systemPath>${autoweka.jar}</systemPath>
+            <systemPath>${basedir}/lib/autoweka-2.6/autoweka.jar</systemPath>
         </dependency>
 
         <!-- ML-Plan -->
@@ -60,7 +56,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ee.ut.bigdata.impl.AutoWekaBenchmark</mainClass>
+                            <mainClass>ee.ut.bigdata.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
