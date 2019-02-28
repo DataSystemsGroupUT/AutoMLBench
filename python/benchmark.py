@@ -119,19 +119,3 @@ class TPOTBenchmark(SklearnBenchmark):
 
     def _best_model(self, model):
         return model.fitted_pipeline_
-
-'''
-class AutoWekaBenchmark(ModelBenchmark):
-    autoweka_benchmark_jar = 'autoweka-benchmark.jar'
-    autoweka_jar = '/home/oleh/Workspace/Research/autoweka-2.6/autoweka.jar'
-    #autoweka_jar = '/home/ubuntu/autoweka-2.6/autoweka.jar'
-
-    def benchmark(self, dataset_file: str, output_dir: str,
-                  time_limit: int = None, n_runs: int = 5,
-                  split: float = 0.75):
-
-        jars = ':'.join([AutoWekaBenchmark.autoweka_benchmark_jar, AutoWekaBenchmark.autoweka_jar])
-        call_args = 'java -cp "{}" ut.ds.autoweka.AutoWekaBenchmark {} {} {} {}'\
-            .format(jars, dataset_file, output_dir, time_limit, n_runs)
-        subprocess.run(call_args, shell=True)
-'''

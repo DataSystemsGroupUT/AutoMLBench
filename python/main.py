@@ -9,7 +9,7 @@ import warnings
 warnings.simplefilter("ignore")
 
 
-models = ['autoweka', 'autosklearn', 'tpot']
+models = ['autosklearn', 'tpot']
 
 
 def benchmark(input_dir: str, output_dir: str,
