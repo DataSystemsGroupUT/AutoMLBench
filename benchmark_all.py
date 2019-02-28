@@ -4,7 +4,7 @@ import subprocess
 
 autoweka_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
 # Set path to autoweka.jar #
-# autoweka_jar = ''
+autoweka_jar = '/home/olehmatsuk/autoweka-2.6/autoweka.jar'
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
