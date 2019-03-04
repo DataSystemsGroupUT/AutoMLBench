@@ -6,6 +6,8 @@ import weka.classifiers.Classifier;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.NumericToNominal;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -49,6 +51,11 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			Instances data = source.getDataSet();
 			if (data.classIndex() == -1)
 				data.setClassIndex(data.numAttributes() - 1);
+
+			Filter convert = new NumericToNominal();
+			convert.setInputFormat(data);
+			data = Filter.useFilter(data, convert);
+
 			return data;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,6 +72,7 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 				// Ignore
 			} catch (Exception e) {
 				result.setError(e.getMessage());
+				e.printStackTrace();
 			}
 		});
 		long timeStart = System.currentTimeMillis();
@@ -88,6 +96,7 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			}
 		} catch (Exception e) {
 			result.setError(e.toString());
+			e.printStackTrace();
 		} finally {
 			if (timeEnd == 0)
 				timeEnd = System.currentTimeMillis();
