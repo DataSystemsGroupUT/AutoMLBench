@@ -10,6 +10,7 @@ public class AutoWekaBenchmark extends WekaBenchmark<AutoWEKAClassifier> {
 	protected AutoWEKAClassifier initClassifier(int timeLimit) {
 		AutoWEKAClassifier classifier = new AutoWEKAClassifier();
 		classifier.setTimeLimit(timeLimit);
+		classifier.setMemLimit(6144);
 		return classifier;
 	}
 

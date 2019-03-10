@@ -1,6 +1,7 @@
 import argparse
 import os
 import subprocess
+import shutil
 
 autoweka_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
 # Set path to autoweka.jar #
@@ -21,10 +22,12 @@ if __name__ == '__main__':
 
     # Java tool benchmarks
     jars = autoweka_benchmark_jar + ':' + autoweka_jar
-    subprocess.run('java -cp "{}" ee.ut.bigdata.Main {} {} {} {}'
+    subprocess.run('java -Xmx6g -cp "{}" ee.ut.bigdata.Main {} {} {} {}'
                    .format(jars, args.input_dir, tmp_output, args.time, args.n_runs), shell = True)
 
     # collect results
     subprocess.run('python python/collect.py {} {}'
                    .format(tmp_output, args.result_dir), shell=True)
+
+    shutil.rmtree(tmp_output)
 

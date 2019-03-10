@@ -18,28 +18,13 @@
             <systemPath>${basedir}/lib/autoweka-2.6/autoweka.jar</systemPath>
         </dependency>
 
-        <!-- ML-Plan -->
-        <dependency>
-            <groupId>de.upb.isys</groupId>
-            <artifactId>mlplan</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <!-- PropertiesUtils -->
+        <!-- Json Converter -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>1.7.1</version>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>ailibs</id>
-            <name>AILibs</name>
-            <url>https://nexus.cs.upb.de/repository/sfb901-snapshots/</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>

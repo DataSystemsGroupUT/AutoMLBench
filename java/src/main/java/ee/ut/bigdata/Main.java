@@ -25,7 +25,9 @@ public class Main {
 		File path = new File(source);
 		for (File file: path.listFiles()){
 			if (file.isFile() && file.getName().endsWith(".csv")){
+				System.out.println("File: " + file.getName());
 				for (Class<? extends Benchmark> benchmarkClass: models.values()) {
+					System.out.println("Model: " + benchmarkClass.getSimpleName());
 					benchmarkClass.newInstance().benchmark(file.getAbsolutePath(), output,
 							timeLimit, nRuns, split);
 				}
