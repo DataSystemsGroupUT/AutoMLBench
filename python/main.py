@@ -1,11 +1,11 @@
 import argparse
+import warnings
 from os import listdir
 from os.path import join
 from typing import List
 
 from benchmark import AutoSklearnBenchmark, TPOTBenchmark
 
-import warnings
 warnings.simplefilter("ignore")
 
 
@@ -22,13 +22,11 @@ def benchmark(input_dir: str, output_dir: str,
     }
     use_models = [model_to_bench[model] for model in use_models if model in model_to_bench]
 
-    exts = ['.csv']
-    for file in listdir(input_dir):
-        if any([file.endswith(ext) for ext in exts]):
-            print('File: ' + file)
-            dataset = join(input_dir, file)
-            for model in use_models:
-                print('Model: ' + model.__name__)
+    for model in use_models:
+        exts = ['.csv']
+        for file in listdir(input_dir):
+            if any([file.endswith(ext) for ext in exts]):
+                dataset = join(input_dir, file)
                 model().benchmark(dataset, output_dir, time, n_runs, split)
 
 

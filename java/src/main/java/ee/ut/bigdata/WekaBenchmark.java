@@ -14,11 +14,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
+
+	private static final String LOG = "[%s] <%s> <%s> run %d";
 
 	@Override
 	public void benchmark(String dataset, String output, int timeLimit, int nRuns, float split) {
@@ -34,7 +37,7 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			Instances train = new Instances(data, 0, trainSize);
 			Instances test = new Instances(data, trainSize, testSize);
 			C classifier = initClassifier(timeLimit);
-			BenchmarkResult result = benchmarkResult(classifier, train, test, timeLimit);
+			BenchmarkResult result = benchmarkResult(classifier, dataset, train, test, timeLimit, i + 1);
 			results.add(result);
 		}
 
@@ -63,7 +66,8 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		}
 	}
 
-	private BenchmarkResult benchmarkResult(C classifier, Instances train, Instances test, int timeLimit) {
+	private BenchmarkResult benchmarkResult(C classifier, String dataset, Instances train, Instances test,
+	                                        int timeLimit, int run) {
 		BenchmarkResult result = new BenchmarkResult();
 		Thread trainingThread = new Thread(() -> {
 			try {
@@ -76,11 +80,15 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			}
 		});
 		long timeStart = System.currentTimeMillis();
+		System.out.println(String.format(LOG, LocalDateTime.now(), getClass().getSimpleName(),
+				getFileName(dataset), run) + " start");
 		long timeEnd = 0;
 		try {
 			trainingThread.start();
 			trainingThread.join((long)(timeLimit * 60000 * 1.1));
 			timeEnd = System.currentTimeMillis();
+			System.out.println(String.format(LOG, LocalDateTime.now(), getClass().getSimpleName(),
+					getFileName(dataset), run) + " end");
 
 			if (trainingThread.isAlive()) {
 				trainingThread.interrupt();
@@ -98,8 +106,11 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			result.setError(e.toString());
 			e.printStackTrace();
 		} finally {
-			if (timeEnd == 0)
+			if (timeEnd == 0) {
 				timeEnd = System.currentTimeMillis();
+				System.out.println(String.format(LOG, LocalDateTime.now(), getClass().getSimpleName(),
+						getFileName(dataset), run) + " end");
+			}
 			result.setTime(Math.round((timeEnd - timeStart) / 1000.0));
 		}
 		return result;
@@ -109,8 +120,8 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		Gson gson = new Gson();
 		String json = gson.toJson(results);
 		try {
-			String fileName = Paths.get(dataset).getFileName().toString().replaceFirst("[.][^.]+$", "") + ".json";
-			File file = Paths.get(output, AutoWekaBenchmark.class.getSimpleName(), fileName).toFile();
+			File file = Paths.get(output, AutoWekaBenchmark.class.getSimpleName(),
+					getFileName(dataset) + ".json").toFile();
 			file.getParentFile().mkdirs();
 			file.createNewFile();
 
@@ -120,6 +131,10 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private String getFileName(String path) {
+		return Paths.get(path).getFileName().toString().replaceFirst("[.][^.]+$", "");
 	}
 
 	public void runClassifier(String[] args) {

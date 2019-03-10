@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 import time
@@ -38,22 +39,29 @@ class ModelBenchmark(ABC):
 
 class SklearnBenchmark(ModelBenchmark, ABC):
 
+    LOG = '[{}] <{}> <{}> run {}'
+
     def benchmark(self, dataset_file: str, output_dir: str,
                   time_limit: int = None, n_runs: int = 5,
                   split: float = 0.75):
+        model_name = self.__class__.__name__
+        dataset_name = os.path.splitext(os.path.basename(dataset_file))[0]
+
         results = []
         X, y = self._load_dataset(dataset_file)
-        for _ in range(n_runs):
+        for i in range(n_runs):
             X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=split)
             model = self._init_model(time_limit)
 
             result = {}
             time_start, time_end = time.time(), None
+            print(SklearnBenchmark.LOG.format(datetime.datetime.now(), model_name, dataset_name, (i + 1)) + ' start')
             try:
                 train_thread = Thread(target=self._fit_model, args=(model, X_train, y_train))
                 train_thread.start()
                 train_thread.join(timeout=time_limit * 60 * 1.1)
                 time_end = time.time()
+                print(SklearnBenchmark.LOG.format(datetime.datetime.now(), model_name, dataset_name, (i + 1)) + ' end')
 
                 if train_thread.is_alive():
                     train_thread.terminate()
@@ -66,7 +74,9 @@ class SklearnBenchmark(ModelBenchmark, ABC):
             finally:
                 if time_end is None:
                     time_end = time.time()
+                    print(SklearnBenchmark.LOG.format(datetime.datetime.now(), model_name, dataset_name, (i + 1)) + ' end')
                 result['time'] = time_end - time_start
+
             results.append(result)
 
         self._output(dataset_file, output_dir, results)
