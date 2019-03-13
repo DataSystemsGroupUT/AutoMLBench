@@ -19,8 +19,4 @@ public class AutoWekaBenchmark extends WekaBenchmark<AutoWEKAClassifier> {
 		String[] modelOutput = classifier.toString().split("\n");
 		return modelOutput[0] + "\n" + modelOutput[1];
 	}
-
-	public static void main(String[] args) {
-		new AutoWekaBenchmark().runClassifier(args);
-	}
 }

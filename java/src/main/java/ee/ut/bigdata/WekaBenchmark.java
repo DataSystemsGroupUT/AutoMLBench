@@ -1,7 +1,6 @@
 package ee.ut.bigdata;
 
 import com.google.gson.Gson;
-import ee.ut.bigdata.impl.AutoWekaBenchmark;
 import weka.classifiers.Classifier;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
@@ -13,35 +12,26 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 
-	private static final String LOG = "[%s] <%s> <%s> run %d";
-
 	@Override
-	public void benchmark(String dataset, String output, int timeLimit, int nRuns, float split) {
+	public void benchmark(String dataset, String output, int timeLimit, float split) {
 		Instances data = loadInstances(dataset);
 		if (data == null)
 			return;
 
-		List<BenchmarkResult> results = new ArrayList<>();
-		for (int i = 0; i < nRuns; ++i) {
-			data.randomize(new Random());
-			int trainSize = Math.round(data.numInstances() * split);
-			int testSize = data.numInstances() - trainSize;
-			Instances train = new Instances(data, 0, trainSize);
-			Instances test = new Instances(data, trainSize, testSize);
-			C classifier = initClassifier(timeLimit);
-			BenchmarkResult result = benchmarkResult(classifier, dataset, train, test, timeLimit, i + 1);
-			results.add(result);
-		}
+		data.randomize(new Random());
+		int trainSize = Math.round(data.numInstances() * split);
+		int testSize = data.numInstances() - trainSize;
+		Instances train = new Instances(data, 0, trainSize);
+		Instances test = new Instances(data, trainSize, testSize);
+		C classifier = initClassifier(timeLimit);
 
-		output(results, dataset, output);
+		BenchmarkResult result = benchmarkResult(classifier, train, test, timeLimit);
+
+		output(result, output);
 	}
 
 	protected abstract C initClassifier(int timeLimit);
@@ -66,8 +56,7 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		}
 	}
 
-	private BenchmarkResult benchmarkResult(C classifier, String dataset, Instances train, Instances test,
-	                                        int timeLimit, int run) {
+	private BenchmarkResult benchmarkResult(C classifier, Instances train, Instances test, int timeLimit) {
 		BenchmarkResult result = new BenchmarkResult();
 		Thread trainingThread = new Thread(() -> {
 			try {
@@ -80,15 +69,11 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			}
 		});
 		long timeStart = System.currentTimeMillis();
-		System.out.println(String.format(LOG, LocalDateTime.now(), getClass().getSimpleName(),
-				getFileName(dataset), run) + " start");
 		long timeEnd = 0;
 		try {
 			trainingThread.start();
 			trainingThread.join((long)(timeLimit * 60000 * 1.1));
 			timeEnd = System.currentTimeMillis();
-			System.out.println(String.format(LOG, LocalDateTime.now(), getClass().getSimpleName(),
-					getFileName(dataset), run) + " end");
 
 			if (trainingThread.isAlive()) {
 				trainingThread.interrupt();
@@ -108,44 +93,19 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		} finally {
 			if (timeEnd == 0) {
 				timeEnd = System.currentTimeMillis();
-				System.out.println(String.format(LOG, LocalDateTime.now(), getClass().getSimpleName(),
-						getFileName(dataset), run) + " end");
 			}
 			result.setTime(Math.round((timeEnd - timeStart) / 1000.0));
 		}
 		return result;
 	}
 
-	private void output(List<BenchmarkResult> results, String dataset, String output) {
+	private void output(BenchmarkResult result, String output) {
 		Gson gson = new Gson();
-		String json = gson.toJson(results);
-		try {
-			File file = Paths.get(output, AutoWekaBenchmark.class.getSimpleName(),
-					getFileName(dataset) + ".json").toFile();
-			file.getParentFile().mkdirs();
-			file.createNewFile();
-
-			try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-				writer.write(json);
-			}
+		String json = gson.toJson(result);
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File(output)))) {
+			writer.write(json);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private String getFileName(String path) {
-		return Paths.get(path).getFileName().toString().replaceFirst("[.][^.]+$", "");
-	}
-
-	public void runClassifier(String[] args) {
-		if (args.length < 4)
-			throw new IllegalArgumentException("Not enough arguments. Usage: <dataset> <output> <timeLimit> <nRuns>");
-		String dataset = args[0];
-		String output = args[1];
-		int timeLimit = Integer.parseInt(args[2]);
-		int nRuns = Integer.parseInt(args[3]);
-		float split = 0.75f;
-
-		benchmark(dataset, output, timeLimit, nRuns, split);
 	}
 }

@@ -1,45 +1,25 @@
 import argparse
 import warnings
-from os import listdir
-from os.path import join
-from typing import List
-
 from benchmark import AutoSklearnBenchmark, TPOTBenchmark
 
 warnings.simplefilter("ignore")
 
 
-models = ['autosklearn', 'tpot']
-
-
-def benchmark(input_dir: str, output_dir: str,
-              time: int = None, n_runs: int = 5,
-              split: float = 0.75, use_models: List[str] = models):
-
+def benchmark(dataset_file: str, output_file: str,
+              time: int, model: str, split: float = 0.75):
     model_to_bench = {
         'autosklearn': AutoSklearnBenchmark,
         'tpot': TPOTBenchmark,
     }
-    use_models = [model_to_bench[model] for model in use_models if model in model_to_bench]
-
-    for model in use_models:
-        exts = ['.csv']
-        for file in listdir(input_dir):
-            if any([file.endswith(ext) for ext in exts]):
-                dataset = join(input_dir, file)
-                model().benchmark(dataset, output_dir, time, n_runs, split)
+    model_to_bench[model]().benchmark(dataset_file, output_file, time, split)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('input_dir', help='Datasets directory')
-    parser.add_argument('output_dir', help='Benchmark results directory')
+    parser.add_argument('input_file', help='Datasets directory')
+    parser.add_argument('output_file', help='Benchmark results directory')
     parser.add_argument('-t', '--time', type=int, help='Time budget')
-    parser.add_argument('-n', '--n_runs', type=int, help='Number of runs per model on dataset')
-    parser.add_argument('-m', '--model', choices=models, default=models, help='AutoML Models')
+    parser.add_argument('-m', '--model', help='AutoML Models')
     args = parser.parse_args()
 
-    benchmark(args.input_dir, args.output_dir, args.time, args.n_runs,
-              use_models=args.model if isinstance(args.model, list) else [args.model])
-
-
+    benchmark(args.input_file, args.output_file, args.time, args.model)

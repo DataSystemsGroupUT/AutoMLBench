@@ -1,9 +1,7 @@
-import datetime
 import json
-import os
 import time
 from abc import ABC, abstractmethod
-from utils import Thread
+from typing import Dict
 
 import pandas as pd
 from autosklearn.classification import AutoSklearnClassifier
@@ -13,73 +11,50 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tpot import TPOTClassifier
 
+from utils import Thread
+
 
 class ModelBenchmark(ABC):
 
     @abstractmethod
-    def benchmark(self, dataset_file: str, output_dir: str,
-                  time_limit: int = None, n_runs: int = 5,
-                  split: float = 0.75):
+    def benchmark(self, dataset_file: str, output_file: str,
+                  time_limit: int = None, split: float = 0.75):
         '''
         Benchmark the model on a dataset and saves results to a directory
         '''
         pass
 
-    def _output(self, dataset_file, output_dir, results = None):
-        model_name = self.__class__.__name__
-        dataset_name = os.path.splitext(os.path.basename(dataset_file))[0]
-        if not os.path.exists(os.path.join(output_dir, model_name)):
-            os.makedirs(os.path.join(output_dir, model_name))
-        output_file = os.path.join(output_dir, model_name, dataset_name + '.json')
-        with open(output_file, 'w') as out:
-            if results is not None:
-                out.write(json.dumps(results))
-        return output_file
-
 
 class SklearnBenchmark(ModelBenchmark, ABC):
 
-    LOG = '[{}] <{}> <{}> run {}'
-
-    def benchmark(self, dataset_file: str, output_dir: str,
-                  time_limit: int = None, n_runs: int = 5,
-                  split: float = 0.75):
-        model_name = self.__class__.__name__
-        dataset_name = os.path.splitext(os.path.basename(dataset_file))[0]
-
-        results = []
+    def benchmark(self, dataset_file: str, output_file: str,
+                  time_limit: int = None, split: float = 0.75):
         X, y = self._load_dataset(dataset_file)
-        for i in range(n_runs):
-            X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=split)
-            model = self._init_model(time_limit)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=split)
+        model = self._init_model(time_limit)
 
-            result = {}
-            time_start, time_end = time.time(), None
-            print(SklearnBenchmark.LOG.format(datetime.datetime.now(), model_name, dataset_name, (i + 1)) + ' start')
-            try:
-                train_thread = Thread(target=self._fit_model, args=(model, X_train, y_train))
-                train_thread.start()
-                train_thread.join(timeout=time_limit * 60 * 1.1)
+        result = {}
+        time_start, time_end = time.time(), None
+        try:
+            train_thread = Thread(target=self._fit_model, args=(model, X_train, y_train))
+            train_thread.start()
+            train_thread.join(timeout=time_limit * 60 * 1.1)
+            time_end = time.time()
+
+            if train_thread.is_alive():
+                train_thread.terminate()
+                result['error'] = 'Timeout'
+            else:
+                result.update(self._evaluate(model, X_test, y_test))
+                result['model'] = str(self._best_model(model))
+        except Exception as e:
+            result['error'] = str(e)
+        finally:
+            if time_end is None:
                 time_end = time.time()
-                print(SklearnBenchmark.LOG.format(datetime.datetime.now(), model_name, dataset_name, (i + 1)) + ' end')
+            result['time'] = time_end - time_start
 
-                if train_thread.is_alive():
-                    train_thread.terminate()
-                    result['error'] = 'Timeout'
-                else:
-                    result.update(self._evaluate(model, X_test, y_test))
-                    result['model'] = str(self._best_model(model))
-            except Exception as e:
-                result['error'] = str(e)
-            finally:
-                if time_end is None:
-                    time_end = time.time()
-                    print(SklearnBenchmark.LOG.format(datetime.datetime.now(), model_name, dataset_name, (i + 1)) + ' end')
-                result['time'] = time_end - time_start
-
-            results.append(result)
-
-        self._output(dataset_file, output_dir, results)
+        self._output(output_file, result)
 
     def _fit_model(self, model, X, y):
         model.fit(X, y)
@@ -113,6 +88,10 @@ class SklearnBenchmark(ModelBenchmark, ABC):
             'recall': recall_score(y, predictions, average='weighted'),
             'f1score': f1_score(y, predictions, average='weighted')
         }
+
+    def _output(self, output_file, result: Dict):
+        with open(output_file, 'w') as out:
+            out.write(json.dumps(result))
 
 
 class AutoSklearnBenchmark(SklearnBenchmark):
