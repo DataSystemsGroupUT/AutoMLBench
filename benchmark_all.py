@@ -22,12 +22,12 @@ jars = '"' + autoweka_benchmark_jar + ':' + autoweka_jar + '"'
 def benchmark(model: str, dataset_file: str, output_file: str):
     cmd = None
     if model == 'autosklearn' or model == 'tpot':
-        cmd = ' '.join([python_bin, 'python/main.py', dataset_file, output_file, '-t', str(time), '-m', model])
+        cmd = ' '.join([python_bin, '-u', 'python/main.py', dataset_file, output_file, '-t', str(time), '-m', model])
     elif model == 'autoweka':
         cmd = ' '.join(['java', '-Xmx6g', '-cp', jars, 'ee.ut.bigdata.Main',
                         dataset_file, output_file, str(time), model])
     if cmd:
-        subprocess.run(cmd, shell=True)
+        subprocess.call(cmd, shell=True, stderr=subprocess.STDOUT)
 
 
 def collect(output_dir: str, collect_dir: str):
