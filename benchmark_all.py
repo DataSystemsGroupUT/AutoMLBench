@@ -80,31 +80,34 @@ if __name__ == '__main__':
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
     runs = list(range(1, n_runs + 1))
 
-    params = [(model, dataset, run) for model in models for dataset in datasets for run in runs]
-    completed = True
-    for model, dataset, run in params:
-        dataset_name = os.path.splitext(dataset)[0]
-        full_output_dir = os.path.join(tmp_output, model, dataset_name)
-        output_file = os.path.join(full_output_dir, '{}.json'.format(run))
-        if not os.path.isfile(output_file):
-            input_file = os.path.join(input_dir, dataset)
-
-            if not os.path.isdir(full_output_dir):
-                os.makedirs(full_output_dir)
-            open(output_file, 'w').close()
-
-            print('{} <{}> <{}> run {} start'.format(datetime.datetime.now(), model, dataset, run))
-            benchmark(model, input_file, output_file)
-            print('{} <{}> <{}> run {} end'.format(datetime.datetime.now(), model, dataset, run))
-
-            completed = False
-            break
-
-    if completed:
-        collect(tmp_output, output_dir)
-        print('{} completed!'.format(datetime.datetime.now()))
-        shutil.rmtree(tmp_output)
-
+    if not datasets:
+        print('No datasets supplied')
     else:
-        print('{} rebooting...'.format(datetime.datetime.now()))
-        os.system('reboot')
+        params = [(model, dataset, run) for model in models for dataset in datasets for run in runs]
+        completed = True
+        for model, dataset, run in params:
+            dataset_name = os.path.splitext(dataset)[0]
+            full_output_dir = os.path.join(tmp_output, model, dataset_name)
+            output_file = os.path.join(full_output_dir, '{}.json'.format(run))
+            if not os.path.isfile(output_file):
+                input_file = os.path.join(input_dir, dataset)
+
+                if not os.path.isdir(full_output_dir):
+                    os.makedirs(full_output_dir)
+                open(output_file, 'w').close()
+
+                print('{} <{}> <{}> run {} start'.format(datetime.datetime.now(), model, dataset, run))
+                benchmark(model, input_file, output_file)
+                print('{} <{}> <{}> run {} end'.format(datetime.datetime.now(), model, dataset, run))
+
+                completed = False
+                break
+
+        if completed:
+            collect(tmp_output, output_dir)
+            print('{} completed!'.format(datetime.datetime.now()))
+            shutil.rmtree(tmp_output)
+
+        else:
+            print('{} rebooting...'.format(datetime.datetime.now()))
+            os.system('reboot')
