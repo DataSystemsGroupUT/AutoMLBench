@@ -18,9 +18,10 @@ class ModelBenchmark(ABC):
 
     @abstractmethod
     def benchmark(self, dataset_file: str, output_file: str,
-                  time_limit: int = None, split: float = 0.75):
+                  time_limit: int = None,
+                  dataset_test_file: str = None, split: float = 0.75):
         '''
-        Benchmark the model on a dataset and saves results to a directory
+        Benchmarks the model on train/test datasets and saves results to a file
         '''
         pass
 
@@ -28,9 +29,9 @@ class ModelBenchmark(ABC):
 class SklearnBenchmark(ModelBenchmark, ABC):
 
     def benchmark(self, dataset_file: str, output_file: str,
-                  time_limit: int = None, split: float = 0.75):
-        X, y = self._load_dataset(dataset_file)
-        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=split)
+                  time_limit: int = None,
+                  dataset_test_file: str = None, split: float = 0.75):
+        X_train, y_train, X_test, y_test = self._load_data(dataset_file, dataset_test_file, split)
         model = self._init_model(time_limit)
 
         result = {}
@@ -67,18 +68,23 @@ class SklearnBenchmark(ModelBenchmark, ABC):
     def _best_model(self, model):
         pass
 
-    def _load_dataset(self, dataset_file):
-        df = pd.read_csv(dataset_file, na_values='?')
+    def _load_data(self, dataset_file, dataset_test_file=None, split=0.75):
+        if dataset_test_file is None:
+            data = pd.read_csv(dataset_file, na_values='?')
+            train, test = train_test_split(data, train_size=split)
+        else:
+            train, test = [pd.read_csv(file, na_values='?') for file in [dataset_file, dataset_test_file]]
+            data = pd.concat([train, test])
 
-        self.categorical_ = df.select_dtypes(['object']).columns
-        df[self.categorical_] = df[self.categorical_].apply(
-            lambda col: pd.Series(LabelEncoder().fit_transform(col.astype('str'))), axis=1)
+        self.categorical_ = data.select_dtypes(['object']).columns
+        lab_encs = {col: LabelEncoder().fit(data[col].astype('str')) for col in self.categorical_}
 
-        X = df.drop(df.columns[-1], axis=1)
-        y = df.iloc[:, -1]
-        if not is_numeric_dtype(y.dtype):
-            y = LabelEncoder().fit_transform(y)
-        return X, y
+        for col in self.categorical_:
+            train[col] = lab_encs[col].transform(train[col].astype('str'))
+            test[col] = lab_encs[col].transform(test[col].astype('str'))
+
+        y_col = data.columns[-1]
+        return train.drop(y_col, axis=1), train[y_col], test.drop(y_col, axis=1), test[y_col]
 
     def _evaluate(self, model, X, y):
         predictions = model.predict(X)

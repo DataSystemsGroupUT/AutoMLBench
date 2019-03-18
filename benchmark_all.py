@@ -4,12 +4,14 @@ import json
 import os
 import shutil
 import subprocess
+
 import numpy as np
 import pandas as pd
-import os
+from sklearn.model_selection import train_test_split
 
 time = 2
 n_runs = 1
+split_seed = 1
 
 python_bin = '/home/olehmatsuk/anaconda3/bin/python3.7'
 java_bin = 'java'
@@ -19,13 +21,22 @@ autoweka_jar = '/home/olehmatsuk/autoweka-2.6/autoweka.jar'
 jars = '"' + autoweka_benchmark_jar + ':' + autoweka_jar + '"'
 
 
-def benchmark(model: str, dataset_file: str, output_file: str):
+def split(dataset_file: str, output_dir: str, p: float = 0.75):
+    name = os.path.splitext(os.path.basename(dataset_file))[0]
+    df = pd.read_csv(dataset_file)
+    train, test = train_test_split(df, train_size=p, random_state=split_seed)
+    train.to_csv(os.path.join(output_dir, f'{name}_train.csv'), index=False)
+    test.to_csv(os.path.join(output_dir, f'{name}_test.csv'), index=False)
+
+
+def benchmark(model: str, train_file: str, test_file: str, output_file: str):
     cmd = None
     if model == 'autosklearn' or model == 'tpot':
-        cmd = ' '.join([python_bin, '-u', 'python/main.py', dataset_file, output_file, '-t', str(time), '-m', model])
+        cmd = ' '.join([python_bin, '-u', 'python/main.py', train_file, output_file,
+                        '-t', str(time), '-m', model, '-te', test_file])
     elif model == 'autoweka':
         cmd = ' '.join(['java', '-Xmx6g', '-cp', jars, 'ee.ut.bigdata.Main',
-                        dataset_file, output_file, str(time), model])
+                        model, train_file, test_file, output_file, str(time)])
     if cmd:
         subprocess.call(cmd, shell=True, stderr=subprocess.STDOUT)
 
@@ -74,7 +85,9 @@ if __name__ == '__main__':
     parser.add_argument('output_dir', help='Benchmark results directory')
     args = parser.parse_args()
     input_dir, output_dir = args.input_dir, args.output_dir
-    tmp_output = 'tmp_output'
+
+    tmp_splits = 'splits'
+    tmp_output = 'output'
 
     models = ['autosklearn', 'tpot', 'autoweka']
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
@@ -83,6 +96,11 @@ if __name__ == '__main__':
     if not datasets:
         print('No datasets supplied')
     else:
+        if not os.path.isdir(tmp_splits):
+            os.makedirs(tmp_splits)
+            for dataset in datasets:
+                split(os.path.join(input_dir, dataset), tmp_splits, 0.75)
+
         params = [(model, dataset, run) for model in models for dataset in datasets for run in runs]
         completed = True
         for model, dataset, run in params:
@@ -90,14 +108,15 @@ if __name__ == '__main__':
             full_output_dir = os.path.join(tmp_output, model, dataset_name)
             output_file = os.path.join(full_output_dir, '{}.json'.format(run))
             if not os.path.isfile(output_file):
-                input_file = os.path.join(input_dir, dataset)
+                train_file = os.path.join(tmp_splits, f'{dataset_name}_train.csv')
+                test_file = os.path.join(tmp_splits, f'{dataset_name}_test.csv')
 
                 if not os.path.isdir(full_output_dir):
                     os.makedirs(full_output_dir)
                 open(output_file, 'w').close()
 
                 print('{} <{}> <{}> run {} start'.format(datetime.datetime.now(), model, dataset, run))
-                benchmark(model, input_file, output_file)
+                benchmark(model, train_file, test_file, output_file)
                 print('{} <{}> <{}> run {} end'.format(datetime.datetime.now(), model, dataset, run))
 
                 completed = False
@@ -106,6 +125,7 @@ if __name__ == '__main__':
         if completed:
             collect(tmp_output, output_dir)
             print('{} completed!'.format(datetime.datetime.now()))
+            shutil.rmtree(tmp_splits)
             shutil.rmtree(tmp_output)
 
         else:

@@ -19,18 +19,32 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 	@Override
 	public void benchmark(String dataset, String output, int timeLimit, float split) {
 		Instances data = loadInstances(dataset);
-		if (data == null)
-			return;
-
+		data = preprocess(data);
 		data.randomize(new Random());
 		int trainSize = Math.round(data.numInstances() * split);
 		int testSize = data.numInstances() - trainSize;
 		Instances train = new Instances(data, 0, trainSize);
 		Instances test = new Instances(data, trainSize, testSize);
+
+		benchmark(train, test, output, timeLimit);
+	}
+
+	@Override
+	public void benchmark(String train, String test, String output, int timeLimit) {
+		Instances trainData = loadInstances(train);
+		Instances testData = loadInstances(test);
+		Instances data = new Instances(trainData);
+		data.addAll(testData);
+		data = preprocess(data);
+		trainData = new Instances(data, 0, trainData.numInstances());
+		testData = new Instances(data, trainData.numInstances(), testData.numInstances());
+
+		benchmark(trainData, testData, output, timeLimit);
+	}
+
+	private void benchmark(Instances train, Instances test, String output, int timeLimit) {
 		C classifier = initClassifier(timeLimit);
-
 		BenchmarkResult result = benchmarkResult(classifier, train, test, timeLimit);
-
 		output(result, output);
 	}
 
@@ -45,15 +59,23 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			if (data.classIndex() == -1)
 				data.setClassIndex(data.numAttributes() - 1);
 
-			Filter convert = new NumericToNominal();
-			convert.setInputFormat(data);
-			data = Filter.useFilter(data, convert);
-
 			return data;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	private Instances preprocess(Instances data) {
+		try {
+			NumericToNominal convert = new NumericToNominal();
+			convert.setAttributeIndicesArray(new int[]{ data.classIndex() });
+			convert.setInputFormat(data);
+			data = Filter.useFilter(data, convert);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
 	}
 
 	private BenchmarkResult benchmarkResult(C classifier, Instances train, Instances test, int timeLimit) {

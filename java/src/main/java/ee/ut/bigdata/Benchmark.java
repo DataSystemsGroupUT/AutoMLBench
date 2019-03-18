@@ -3,8 +3,10 @@ package ee.ut.bigdata;
 public interface Benchmark {
 
 	/**
-	 * Benchmark the model on a dataset and saves results to a directory
+	 * Benchmarks the model on train/test datasets and saves results to a file
 	 */
 	void benchmark(String dataset, String output, int timeLimit, float split);
+
+	void benchmark(String train, String test, String output, int timeLimit);
 
 }

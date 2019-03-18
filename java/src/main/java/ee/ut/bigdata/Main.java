@@ -14,14 +14,19 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		if (args.length < 4)
-			throw new IllegalArgumentException("Not enough arguments. Usage: <source> <output> <timeLimit> <model>");
-		String dataset = args[0];
-		String output = args[1];
-		int timeLimit = Integer.parseInt(args[2]);
-		String model = args[3];
+			throw new IllegalArgumentException(
+					"Not enough arguments. Usage: <model> <dataset> [<test>] <output> <timeLimit>");
+		String model = args[0];
+		String dataset = args[1];
+		String output = args[args.length - 2];
+		int timeLimit = Integer.parseInt(args[args.length - 1]);
+		String test = args.length == 5? args[2]: null;
 
 		Benchmark benchmark = models.get(model).newInstance();
-		benchmark.benchmark(dataset, output, timeLimit, 0.75f);
+		if (test == null)
+			benchmark.benchmark(dataset, output, timeLimit, 0.75f);
+		else
+			benchmark.benchmark(dataset, test, output, timeLimit);
 	}
 
 }
