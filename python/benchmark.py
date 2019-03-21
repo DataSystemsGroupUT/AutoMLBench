@@ -1,0 +1,123 @@
+import json
+import time
+from abc import ABC, abstractmethod
+from typing import Dict
+
+import pandas as pd
+from autosklearn.classification import AutoSklearnClassifier
+from pandas.core.dtypes.common import is_numeric_dtype
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from tpot import TPOTClassifier
+
+from utils import Thread
+
+
+class ModelBenchmark(ABC):
+
+    @abstractmethod
+    def benchmark(self, dataset_file: str, output_file: str,
+                  time_limit: int = None,
+                  dataset_test_file: str = None, split: float = 0.75):
+        '''
+        Benchmarks the model on train/test datasets and saves results to a file
+        '''
+        pass
+
+
+class SklearnBenchmark(ModelBenchmark, ABC):
+
+    def benchmark(self, dataset_file: str, output_file: str,
+                  time_limit: int = None,
+                  dataset_test_file: str = None, split: float = 0.75):
+        X_train, y_train, X_test, y_test = self._load_data(dataset_file, dataset_test_file, split)
+        model = self._init_model(time_limit)
+
+        result = {}
+        time_start, time_end = time.time(), None
+        try:
+            train_thread = Thread(target=self._fit_model, args=(model, X_train, y_train))
+            train_thread.start()
+            train_thread.join(timeout=time_limit * 60 * 1.1)
+            time_end = time.time()
+
+            if train_thread.is_alive():
+                train_thread.terminate()
+                result['error'] = 'Timeout'
+            else:
+                result.update(self._evaluate(model, X_test, y_test))
+                result['model'] = str(self._best_model(model))
+        except Exception as e:
+            result['error'] = str(e)
+        finally:
+            if time_end is None:
+                time_end = time.time()
+            result['time'] = time_end - time_start
+
+        self._output(output_file, result)
+
+    def _fit_model(self, model, X, y):
+        model.fit(X, y)
+
+    @abstractmethod
+    def _init_model(self, time_limit: int = None):
+        pass
+
+    @abstractmethod
+    def _best_model(self, model):
+        pass
+
+    def _load_data(self, dataset_file, dataset_test_file=None, split=0.75):
+        if dataset_test_file is None:
+            data = pd.read_csv(dataset_file, na_values='?')
+            train, test = train_test_split(data, train_size=split)
+        else:
+            train, test = [pd.read_csv(file, na_values='?') for file in [dataset_file, dataset_test_file]]
+            data = pd.concat([train, test])
+
+        self.categorical_ = data.select_dtypes(['object']).columns
+        lab_encs = {col: LabelEncoder().fit(data[col].astype('str')) for col in self.categorical_}
+
+        for col in self.categorical_:
+            train[col] = lab_encs[col].transform(train[col].astype('str'))
+            test[col] = lab_encs[col].transform(test[col].astype('str'))
+
+        y_col = data.columns[-1]
+        return train.drop(y_col, axis=1), train[y_col], test.drop(y_col, axis=1), test[y_col]
+
+    def _evaluate(self, model, X, y):
+        predictions = model.predict(X)
+        return {
+            'accuracy': accuracy_score(y, predictions),
+            'precision': precision_score(y, predictions, average='weighted'),
+            'recall': recall_score(y, predictions, average='weighted'),
+            'f1score': f1_score(y, predictions, average='weighted')
+        }
+
+    def _output(self, output_file, result: Dict):
+        with open(output_file, 'w') as out:
+            out.write(json.dumps(result))
+
+
+class AutoSklearnBenchmark(SklearnBenchmark):
+
+    def _init_model(self, time_limit: int = None):
+        return AutoSklearnClassifier(time_left_for_this_task=(time if time is None else 60 * time_limit),
+                                     ml_memory_limit=6144, ensemble_memory_limit=2048)
+
+    def _fit_model(self, model, X, y):
+        model.fit(X, y, feat_type=['Categorical' if col in self.categorical_ else 'Numerical' for col in X])
+
+    def _best_model(self, model):
+        return model.get_models_with_weights()
+
+
+class TPOTBenchmark(SklearnBenchmark):
+
+    def _init_model(self, time_limit: int = None):
+        return TPOTClassifier(max_time_mins=time_limit, verbosity=3,
+                              periodic_checkpoint_folder='tpot_pipelines')
+
+    def _best_model(self, model):
+        return model.fitted_pipeline_
