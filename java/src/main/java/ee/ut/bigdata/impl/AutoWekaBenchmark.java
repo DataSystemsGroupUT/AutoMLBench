@@ -1,7 +1,6 @@
 package ee.ut.bigdata.impl;
 
 import ee.ut.bigdata.WekaBenchmark;
-import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.AutoWEKAClassifier;
 
 public class AutoWekaBenchmark extends WekaBenchmark<AutoWEKAClassifier> {
@@ -15,7 +14,7 @@ public class AutoWekaBenchmark extends WekaBenchmark<AutoWEKAClassifier> {
 	}
 
 	@Override
-	protected String getBestModel(AutoWEKAClassifier classifier, Evaluation eval) {
+	protected String getBestModel(AutoWEKAClassifier classifier) {
 		String[] modelOutput = classifier.toString().split("\n");
 		return modelOutput[0] + "\n" + modelOutput[1];
 	}

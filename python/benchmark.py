@@ -1,11 +1,12 @@
 import json
+import os
 import time
 from abc import ABC, abstractmethod
-from typing import Dict
+from typing import Dict, List
+import subprocess
 
 import pandas as pd
 from autosklearn.classification import AutoSklearnClassifier
-from pandas.core.dtypes.common import is_numeric_dtype
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -19,25 +20,17 @@ class ModelBenchmark(ABC):
     @abstractmethod
     def benchmark(self, dataset_file: str, output_file: str,
                   time_limit: int = None,
-                  dataset_test_file: str = None, split: float = 0.75):
+                  dataset_test_file: str = None, split: float = 0.75,
+                  config: List[str] = None):
         '''
         Benchmarks the model on train/test datasets and saves results to a file
         '''
         pass
 
-
-class SklearnBenchmark(ModelBenchmark, ABC):
-
-    def benchmark(self, dataset_file: str, output_file: str,
-                  time_limit: int = None,
-                  dataset_test_file: str = None, split: float = 0.75):
-        X_train, y_train, X_test, y_test = self._load_data(dataset_file, dataset_test_file, split)
-        model = self._init_model(time_limit)
-
-        result = {}
+    def _timeout(self, func, args, time_limit, result):
         time_start, time_end = time.time(), None
         try:
-            train_thread = Thread(target=self._fit_model, args=(model, X_train, y_train))
+            train_thread = Thread(target=func, args=args)
             train_thread.start()
             train_thread.join(timeout=time_limit * 60 * 1.1)
             time_end = time.time()
@@ -45,15 +38,34 @@ class SklearnBenchmark(ModelBenchmark, ABC):
             if train_thread.is_alive():
                 train_thread.terminate()
                 result['error'] = 'Timeout'
-            else:
-                result.update(self._evaluate(model, X_test, y_test))
-                result['model'] = str(self._best_model(model))
         except Exception as e:
             result['error'] = str(e)
         finally:
             if time_end is None:
                 time_end = time.time()
             result['time'] = time_end - time_start
+
+    def _output(self, output_file, result: Dict):
+        with open(output_file, 'w') as out:
+            out.write(json.dumps(result))
+
+
+class SklearnBenchmark(ModelBenchmark, ABC):
+
+    def benchmark(self, dataset_file: str, output_file: str,
+                  time_limit: int = None,
+                  dataset_test_file: str = None, split: float = 0.75,
+                  config: List[str] = None):
+        X_train, y_train, X_test, y_test = self._load_data(dataset_file, dataset_test_file, split)
+        model = self._init_model(time_limit)
+
+        result = {}
+        self._timeout(self._fit_model, (model, X_train, y_train), time_limit, result)
+        try:
+            result.update(self._evaluate(model, X_test, y_test))
+            result['model'] = str(self._best_model(model))
+        except Exception as e:
+            result['error'] = str(e)
 
         self._output(output_file, result)
 
@@ -95,10 +107,6 @@ class SklearnBenchmark(ModelBenchmark, ABC):
             'f1score': f1_score(y, predictions, average='weighted')
         }
 
-    def _output(self, output_file, result: Dict):
-        with open(output_file, 'w') as out:
-            out.write(json.dumps(result))
-
 
 class AutoSklearnBenchmark(SklearnBenchmark):
 
@@ -121,3 +129,30 @@ class TPOTBenchmark(SklearnBenchmark):
 
     def _best_model(self, model):
         return model.fitted_pipeline_
+
+
+class RecipeBenchmark(ModelBenchmark):
+
+    def benchmark(self, dataset_file: str, output_file: str, time_limit: int = None,
+                  dataset_test_file: str = None, split: float = 0.75,
+                  config: List[str] = None):
+        result = {}
+
+        self._timeout(self._fit_model, (dataset_file, dataset_test_file, time_limit, config), time_limit, result)
+        try:
+            #result.update
+            print('Evaluate here')
+
+        except Exception as e:
+            result['error'] = str(e)
+
+        self._output(output_file, result)
+
+    def _fit_model(self, train, test, time_limit, config: List[str]):
+        python2_bin, recipe_dir = config
+        cmd = ' '.join(['cd', recipe_dir, '&&',
+                        python2_bin, '-u', 'exec.py',
+                        '-dTr', train, '-dTe', test, '-ft', str(time_limit * 60), '-v', '3'])
+        print(cmd)
+        subprocess.call(cmd, shell=True, stderr=subprocess.STDOUT)
+

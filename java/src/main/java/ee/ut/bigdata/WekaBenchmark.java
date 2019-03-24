@@ -42,23 +42,20 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		benchmark(trainData, testData, output, timeLimit);
 	}
 
-	private void benchmark(Instances train, Instances test, String output, int timeLimit) {
+	protected void benchmark(Instances train, Instances test, String output, int timeLimit) {
 		C classifier = initClassifier(timeLimit);
-		BenchmarkResult result = benchmarkResult(classifier, train, test, timeLimit);
+		BenchmarkResult result = doBenchmark(classifier, train, test, timeLimit);
 		output(result, output);
 	}
 
 	protected abstract C initClassifier(int timeLimit);
 
-	protected abstract String getBestModel(C classifier, Evaluation eval);
-
-	private Instances loadInstances(String location) {
+	protected Instances loadInstances(String location) {
 		try {
 			ConverterUtils.DataSource source = new ConverterUtils.DataSource(location);
 			Instances data = source.getDataSet();
 			if (data.classIndex() == -1)
 				data.setClassIndex(data.numAttributes() - 1);
-
 			return data;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,7 +63,7 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		}
 	}
 
-	private Instances preprocess(Instances data) {
+	protected Instances preprocess(Instances data) {
 		try {
 			NumericToNominal convert = new NumericToNominal();
 			convert.setAttributeIndicesArray(new int[]{ data.classIndex() });
@@ -78,9 +75,47 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 		return data;
 	}
 
-	private BenchmarkResult benchmarkResult(C classifier, Instances train, Instances test, int timeLimit) {
+	protected BenchmarkResult doBenchmark(C classifier, Instances train, Instances test, int timeLimit) {
 		BenchmarkResult result = new BenchmarkResult();
-		Thread trainingThread = new Thread(() -> {
+		Thread trainingThread = trainingThread(classifier, train, result);
+		runWithTimeout(trainingThread, timeLimit, result);
+
+		if (result.getError() == null) {
+			try {
+				evaluate(classifier, train, test, result);
+			} catch (Exception e) {
+				result.setError(e.getMessage());
+			}
+		}
+		return result;
+	}
+
+	protected void evaluate(C classifier, Instances train, Instances test, BenchmarkResult result) {
+		try {
+			Evaluation eval = new Evaluation(train);
+			eval.evaluateModel(classifier, test);
+			result.setAccuracy(eval.pctCorrect() / 100.0);
+			result.setPrecision(eval.weightedPrecision());
+			result.setRecall(eval.weightedRecall());
+			result.setF1score(eval.weightedFMeasure());
+			result.setModel(getBestModel(classifier));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	protected void output(BenchmarkResult result, String output) {
+		Gson gson = new Gson();
+		String json = gson.toJson(result);
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File(output)))) {
+			writer.write(json);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	protected Thread trainingThread(C classifier, Instances train, BenchmarkResult result) {
+		return new Thread(() -> {
 			try {
 				classifier.buildClassifier(train);
 			} catch (InterruptedException e) {
@@ -90,24 +125,18 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 				e.printStackTrace();
 			}
 		});
+	}
+
+	protected void runWithTimeout(Thread thread, int timeLimit, BenchmarkResult result) {
 		long timeStart = System.currentTimeMillis();
 		long timeEnd = 0;
 		try {
-			trainingThread.start();
-			trainingThread.join((long)(timeLimit * 60000 * 1.1));
+			thread.start();
+			thread.join((long) (timeLimit * 60000 * 1.1));
 			timeEnd = System.currentTimeMillis();
-
-			if (trainingThread.isAlive()) {
-				trainingThread.interrupt();
+			if (thread.isAlive()) {
+				thread.interrupt();
 				result.setError("Timeout");
-			} else if (result.getError() == null) {
-				Evaluation eval = new Evaluation(train);
-				eval.evaluateModel(classifier, test);
-				result.setAccuracy(eval.pctCorrect() / 100.0);
-				result.setPrecision(eval.weightedPrecision());
-				result.setRecall(eval.weightedRecall());
-				result.setF1score(eval.weightedFMeasure());
-				result.setModel(getBestModel(classifier, eval));
 			}
 		} catch (Exception e) {
 			result.setError(e.toString());
@@ -118,16 +147,10 @@ public abstract class WekaBenchmark<C extends Classifier> implements Benchmark {
 			}
 			result.setTime(Math.round((timeEnd - timeStart) / 1000.0));
 		}
-		return result;
 	}
 
-	private void output(BenchmarkResult result, String output) {
-		Gson gson = new Gson();
-		String json = gson.toJson(result);
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File(output)))) {
-			writer.write(json);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+	protected String getBestModel(C classifier) {
+		return classifier.toString();
 	}
 }

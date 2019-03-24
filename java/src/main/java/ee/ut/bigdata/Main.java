@@ -1,6 +1,7 @@
 package ee.ut.bigdata;
 
 import ee.ut.bigdata.impl.AutoWekaBenchmark;
+import ee.ut.bigdata.impl.MLPlanBenchmark;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,7 @@ public class Main {
 	private static Map<String, Class<? extends Benchmark>> models = new HashMap<>();
 	static {
 		models.put("autoweka", AutoWekaBenchmark.class);
+		models.put("mlplan", MLPlanBenchmark.class);
 	}
 
 	public static void main(String[] args) throws Exception {

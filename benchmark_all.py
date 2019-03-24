@@ -16,9 +16,14 @@ split_seed = 1
 python_bin = '/home/olehmatsuk/anaconda3/bin/python3.7'
 java_bin = 'java'
 
-autoweka_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
+java_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
 autoweka_jar = '/home/olehmatsuk/autoweka-2.6/autoweka.jar'
-jars = '"' + autoweka_benchmark_jar + ':' + autoweka_jar + '"'
+ml_plan_dir = '/home/olehmatsuk/ailibs-0.9.0'
+mlplan_jar = f'{ml_plan_dir}/AILibs-0.0.1-SNAPSHOT-all.jar'
+jars = '"' + ':'.join([os.path.abspath(java_benchmark_jar), autoweka_jar, mlplan_jar]) + '"'
+
+python2_bin = '/home/olehmatsuk/anaconda3/envs/py27/bin/python'
+recipe_dir = '/home/olehmatsuk/Recipe'
 
 
 def split(dataset_file: str, output_dir: str, p: float = 0.75):
@@ -31,12 +36,20 @@ def split(dataset_file: str, output_dir: str, p: float = 0.75):
 
 def benchmark(model: str, train_file: str, test_file: str, output_file: str):
     cmd = None
-    if model == 'autosklearn' or model == 'tpot':
+    if model in ['autosklearn', 'tpot']:
         cmd = ' '.join([python_bin, '-u', 'python/main.py', train_file, output_file,
                         '-t', str(time), '-m', model, '-te', test_file])
+    elif model == 'recipe':
+        cmd = ' '.join([python_bin, '-u', 'python/main.py', train_file, output_file,
+                        '-t', str(time), '-m', model, '-te', test_file,
+                        '-c', python2_bin, recipe_dir])
     elif model == 'autoweka':
         cmd = ' '.join(['java', '-Xmx6g', '-cp', jars, 'ee.ut.bigdata.Main',
                         model, train_file, test_file, output_file, str(time)])
+    elif model == 'mlplan':
+        cmd = ' '.join(['cd', ml_plan_dir, '&&', 'java', '-Xmx6g', '-cp', jars, 'ee.ut.bigdata.Main',
+                        model, os.path.abspath(train_file), os.path.abspath(test_file),
+                        os.path.abspath(output_file), str(time)])
     if cmd:
         subprocess.call(cmd, shell=True, stderr=subprocess.STDOUT)
 
@@ -89,7 +102,7 @@ if __name__ == '__main__':
     tmp_splits = 'splits'
     tmp_output = 'output'
 
-    models = ['autosklearn', 'tpot', 'autoweka']
+    models = ['autosklearn', 'tpot', 'recipe', 'autoweka', 'mlplan']
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
     runs = list(range(1, n_runs + 1))
 
