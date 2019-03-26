@@ -28,6 +28,8 @@ public class MLPlanBenchmark extends WekaBenchmark<Classifier> {
 
 			BenchmarkResult result = doBenchmark(mlplan, train, test, timeLimit);
 			output(result, output);
+
+			System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
