@@ -18,11 +18,12 @@ public class MLPlanBenchmark extends WekaBenchmark<Classifier> {
 		try {
 			MLPlanBuilder builder = new MLPlanBuilder().withAutoWEKAConfiguration()
 					.withRandomCompletionBasedBestFirstSearch();
-			builder.withTimeoutForNodeEvaluation(new TimeOut(Math.round(timeLimit * 0.1), TimeUnit.SECONDS));
-			builder.withTimeoutForSingleSolutionEvaluation(new TimeOut(Math.round(timeLimit * 0.1), TimeUnit.SECONDS));
+			TimeOut evalTimeout = new TimeOut(Math.round(timeLimit * 60 * 0.1), TimeUnit.SECONDS);
+			builder.withTimeoutForNodeEvaluation(evalTimeout);
+			builder.withTimeoutForSingleSolutionEvaluation(evalTimeout);
 			MLPlan mlplan = new MLPlan(builder, train);
 			mlplan.setPortionOfDataForPhase2(0f);
-			mlplan.setTimeout(timeLimit, TimeUnit.SECONDS);
+			mlplan.setTimeout(timeLimit, TimeUnit.MINUTES);
 			mlplan.setNumCPUs(2);
 
 			BenchmarkResult result = doBenchmark(mlplan, train, test, timeLimit);

@@ -18,6 +18,15 @@
             <systemPath>${basedir}/lib/autoweka-2.6/autoweka.jar</systemPath>
         </dependency>
 
+        <!-- MLPlan-->
+        <dependency>
+            <groupId>de.upb.isys</groupId>
+            <artifactId>mlplan</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/AILibs-0.0.1-SNAPSHOT-all.jar</systemPath>
+        </dependency>
+
         <!-- Json Converter -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
