@@ -36,7 +36,7 @@ def split(dataset_file: str, output_dir: str, p: float = 0.75):
 
 def benchmark(model: str, train_file: str, test_file: str, output_file: str):
     cmd = None
-    if model in ['autosklearn', 'autosklearn-v', 'tpot']:
+    if model in ['autosklearn', 'autosklearn-v', 'autosklearn-m', 'tpot']:
         cmd = ' '.join([python_bin, '-u', 'python/main.py', train_file, output_file,
                         '-t', str(time), '-m', model, '-te', test_file])
     elif model == 'recipe':
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     tmp_splits = 'splits'
     tmp_output = 'output'
 
-    models = ['autosklearn', 'autosklearn-v']
+    models = ['autosklearn-m']
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
     runs = list(range(1, n_runs + 1))
 

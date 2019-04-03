@@ -1,8 +1,7 @@
 import argparse
 import warnings
-from typing import List
 
-from benchmark import AutoSklearnBenchmark, TPOTBenchmark, RecipeBenchmark, AutoSklearnVanillaBenchmark
+from benchmark import *
 
 warnings.simplefilter("ignore")
 
@@ -13,6 +12,7 @@ def benchmark(dataset_file: str, output_file: str,
     model_to_bench = {
         'autosklearn': AutoSklearnBenchmark,
         'autosklearn-v': AutoSklearnVanillaBenchmark,
+        'autosklearn-m': AutoSklearnMetaBenchmark,
         'tpot': TPOTBenchmark,
         'recipe': RecipeBenchmark
     }
