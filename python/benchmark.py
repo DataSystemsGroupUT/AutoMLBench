@@ -134,6 +134,14 @@ class AutoSklearnMetaBenchmark(AutoSklearnBenchmark):
         return AutoSklearnClassifier(time_left_for_this_task=(time if time is None else 60 * time_limit),
                                      ml_memory_limit=6144, ensemble_memory_limit=2048,
                                      ensemble_size=1)
+
+
+class AutoSklearnEnsBenchmark(AutoSklearnBenchmark):
+
+    def _init_model(self, time_limit: int = None):
+        return AutoSklearnClassifier(time_left_for_this_task=(time if time is None else 60 * time_limit),
+                                     ml_memory_limit=6144, ensemble_memory_limit=2048,
+                                     initial_configurations_via_metalearning=0)
     
 
 class TPOTBenchmark(SklearnBenchmark):

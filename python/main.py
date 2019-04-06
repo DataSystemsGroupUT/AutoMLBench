@@ -13,6 +13,7 @@ def benchmark(dataset_file: str, output_file: str,
         'autosklearn': AutoSklearnBenchmark,
         'autosklearn-v': AutoSklearnVanillaBenchmark,
         'autosklearn-m': AutoSklearnMetaBenchmark,
+        'autosklearn-e': AutoSklearnEnsBenchmark,
         'tpot': TPOTBenchmark,
         'recipe': RecipeBenchmark
     }
