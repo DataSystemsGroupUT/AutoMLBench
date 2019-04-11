@@ -9,7 +9,8 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-time = 2
+models = ['autoweka']
+time = 3
 n_runs = 1
 split_seed = 1
 
@@ -102,7 +103,6 @@ if __name__ == '__main__':
     tmp_splits = 'splits'
     tmp_output = 'output'
 
-    models = ['autosklearn', 'tpot', 'recipe', 'autoweka', 'mlplan']
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
     runs = list(range(1, n_runs + 1))
 

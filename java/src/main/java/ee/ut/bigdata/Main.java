@@ -27,8 +27,9 @@ public class Main {
 		Benchmark benchmark = models.get(model).newInstance();
 		if (test == null)
 			benchmark.benchmark(dataset, output, timeLimit, 0.75f);
-		else
+		else {
 			benchmark.benchmark(dataset, test, output, timeLimit);
+		}
 	}
 
 }
