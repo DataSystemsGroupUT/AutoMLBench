@@ -1,9 +1,13 @@
 import argparse
 import datetime
 import json
+import memory_profiler
 import os
 import shutil
 import subprocess
+import threading
+import psutil
+import time as t
 
 import numpy as np
 import pandas as pd
@@ -16,6 +20,8 @@ split_seed = 1
 
 python_bin = '/home/olehmatsuk/anaconda3/bin/python3.7'
 java_bin = 'java'
+
+resource_log_dir = '/home/olehmatsuk/logs'
 
 java_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
 autoweka_jar = '/home/olehmatsuk/autoweka-2.6/autoweka.jar'
@@ -52,7 +58,9 @@ def benchmark(model: str, train_file: str, test_file: str, output_file: str):
                         model, os.path.abspath(train_file), os.path.abspath(test_file),
                         os.path.abspath(output_file), str(time)])
     if cmd:
-        subprocess.call(cmd, shell=True, stderr=subprocess.STDOUT)
+        proc = subprocess.Popen("exec " + cmd, shell=True, stderr=subprocess.STDOUT)
+        logger(proc.pid)
+        proc.wait()
 
 
 def collect(output_dir: str, collect_dir: str):
@@ -91,6 +99,46 @@ def collect(output_dir: str, collect_dir: str):
             benchmark_data[dataset] = dataset_data
         df = pd.DataFrame.from_dict(benchmark_data, orient='index')
         df.to_csv(os.path.join(collect_dir, benchmark + '.csv'))
+
+
+def makedirs(path):
+    if not os.path.exists(os.path.dirname(path)):
+        try:
+            os.makedirs(os.path.dirname(path))
+        except OSError as exc:  # Guard against race condition
+            if exc.errno != errno.EEXIST:
+                raise
+
+
+def cpu_logger(pid, filename):
+    print("CPU logger start\n")
+    makedirs(filename)
+
+    process = psutil.Process(pid)
+    with open(filename, "a+") as f:
+        f.write(str(datetime.datetime.now()) + '\n')
+        for index in range(1, 360000):
+            message = f'{index}, memory_percent: {process.memory_percent()}, ' \
+                f'cpu_percent: {psutil.cpu_percent(percpu=False)}'
+            f.write(message + "\n")
+            t.sleep(1)
+
+
+def mem_logger(pid, filename):
+    print("Memory logger start\n")
+    makedirs(filename)
+
+    with open(filename, "a") as f:
+        f.write(str(datetime.datetime.now()) + '\n')
+        memory_profiler.memory_usage(pid, interval=1, timeout=360000, retval=False, stream=f)
+
+
+def logger(pid):
+    try:
+        threading.Thread(target=cpu_logger, args=(pid, os.path.join(resource_log_dir, 'cpu.log')), daemon=True).start()
+        threading.Thread(target=mem_logger, args=(pid, os.path.join(resource_log_dir, 'mem.log')), daemon=True).start()
+    except:
+        print("Error while running the logger service")
 
 
 if __name__ == '__main__':
