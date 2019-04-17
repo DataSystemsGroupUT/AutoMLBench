@@ -103,11 +103,7 @@ def collect(output_dir: str, collect_dir: str):
 
 def makedirs(path):
     if not os.path.exists(os.path.dirname(path)):
-        try:
-            os.makedirs(os.path.dirname(path))
-        except OSError as exc:  # Guard against race condition
-            if exc.errno != errno.EEXIST:
-                raise
+        os.makedirs(os.path.dirname(path))
 
 
 def cpu_logger(pid, filename):
