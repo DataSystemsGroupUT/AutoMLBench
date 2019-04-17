@@ -43,7 +43,7 @@ def split(dataset_file: str, output_dir: str, p: float = 0.75):
 
 def benchmark(model: str, train_file: str, test_file: str, output_file: str):
     cmd = None
-    if model in ['autosklearn', 'tpot']:
+    if model in ['autosklearn', 'autosklearn-v', 'autosklearn-m', 'autosklearn-e', 'tpot']:
         cmd = ' '.join([python_bin, '-u', 'python/main.py', train_file, output_file,
                         '-t', str(time), '-m', model, '-te', test_file])
     elif model == 'recipe':
