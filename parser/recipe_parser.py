@@ -7,7 +7,7 @@ def parse_recipe(directory):
                                    'recipe_train_acc', 'recipe_train_precision', 'recipe_train_recall', 'recipe_train_f1',
                                    'recipe_test_acc', 'recipe_test_precision', 'recipe_test_recall', 'recipe_test_f1'])  # output DataFrame
     for filename in os.listdir(directory):
-        if filename.endswith(".csv"):
+        if filename.endswith(".csv") and filename.startswith('Result'):
             f = open(os.path.join(directory,filename))
             lines = f.readlines()
             vars = lines[0].split(',')

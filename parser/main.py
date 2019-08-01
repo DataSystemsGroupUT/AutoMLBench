@@ -31,7 +31,7 @@ def time_experiment(directory):
 
 if __name__ == "__main__":
     # execute only if run as a script
-    directory = r'C:\Users\HassanEldeeb\Desktop\Benchmark_Deliverables\Logs\Results4'
+    directory = r'C:\Users\HassanEldeeb\Documents\GitHub\AutoMLBenchmarking\Logs\Results10'
     tb_result_dict = time_experiment(directory)
     tb_result_df = pd.DataFrame()
     for key in tb_result_dict.keys():
