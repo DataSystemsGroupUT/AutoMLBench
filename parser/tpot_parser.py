@@ -3,19 +3,24 @@ import os
 
 
 def parse_tpot(directory):
-    result = pd.DataFrame(columns=['tpot_accuracy_1', 'tpot_f1_score_1', 'tpot_model_1',
-                                   'tpot_precision_1', 'tpot_recall_1', 'tpot_time_1'])
-    for file in os.listdir(directory):
-        if file.endswith('.csv'):
-            sub_result = pd.read_csv(os.path.join(directory, file), index_col='dataset')
-            sub_result = sub_result[['accuracy_1', 'f1score_1', 'model_1', 'precision_1', 'recall_1', 'time_1']]
-            sub_result.rename(columns={'accuracy_1': 'tpot_accuracy_1',
-                                   'f1score_1': 'tpot_f1_score_1',
-                                   'model_1': 'tpot_model_1',
-                                   'precision_1': 'tpot_precision_1',
-                                   'recall_1': 'tpot_recall_1',
-                                   'time_1': 'tpot_time_1'}, inplace=True)
-            result = result.append(sub_result)
+    result = pd.DataFrame(columns=['tpot_accuracy_mean', 'tpot_f1_score_mean', 'tpot_model_1',
+                                   'tpot_precision_mean', 'tpot_recall_mean', 'tpot_time_mean'])
+    for subdir, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.csv'):
+                sub_result = pd.read_csv(os.path.join(subdir, file), index_col=0)
+                for col in sub_result.columns:
+                    if col not in ['accuracy_mean', 'f1score_mean', 'model_1', 'precision_mean', 'recall_mean', 'time_mean']:
+                        sub_result.drop(col, axis='columns', inplace=True)
+                # sub_result = sub_result[['accuracy_mean', 'f1score_mean', 'model_1', 'precision_mean', 'recall_mean', 'time_mean']]
+                sub_result.rename(columns={'accuracy_mean': 'tpot_accuracy_mean',
+                                       'f1score_mean': 'tpot_f1_score_mean',
+                                       'model_1': 'tpot_model_1',
+                                       'precision_mean': 'tpot_precision_mean',
+                                       'recall_mean': 'tpot_recall_mean',
+                                       'time_mean': 'tpot_time_mean'}, inplace=True)
+                # result = result.append(sub_result)
+                result = pd.concat([result, sub_result], axis=0, sort=True)
     return result
 
 

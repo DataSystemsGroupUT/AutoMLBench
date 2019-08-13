@@ -31,11 +31,13 @@ def time_experiment(directory):
 
 if __name__ == "__main__":
     # execute only if run as a script
-    directory = r'C:\Users\HassanEldeeb\Documents\GitHub\AutoMLBenchmarking\Logs\Results10'
-    tb_result_dict = time_experiment(directory)
-    tb_result_df = pd.DataFrame()
-    for key in tb_result_dict.keys():
-        print(tb_result_df.shape, tb_result_dict[key].shape)
-        tb_result_df = pd.concat([tb_result_df, tb_result_dict[key].loc[~tb_result_dict[key].index.duplicated()]], sort=True, axis= 1)
-    tb_result_df.to_csv(os.path.join(directory, directory.split('\\')[-1] + '.csv'))
+    min = [r'10', r'30', r'60', r'4']
+    for m in min:
+        directory = r'C:\Users\HassanEldeeb\Documents\GitHub\AutoMLBenchmarking\Logs\Results' + m
+        tb_result_dict = time_experiment(directory)
+        tb_result_df = pd.DataFrame()
+        for key in tb_result_dict.keys():
+            #print(tb_result_df.shape, tb_result_dict[key].shape)
+            tb_result_df = pd.concat([tb_result_df, tb_result_dict[key].loc[~tb_result_dict[key].index.duplicated()]], sort=True, axis= 1)
+        tb_result_df.to_csv(os.path.join(directory, directory.split('\\')[-1] + '.csv'))
     print('Done!')
