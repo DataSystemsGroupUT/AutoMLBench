@@ -13,24 +13,24 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-models = ['autoweka']
+models = ['recipe']
 time = 3
 n_runs = 1
 split_seed = 1
 
-python_bin = '/home/olehmatsuk/anaconda3/bin/python3.7'
+python_bin = '/home/Sherif/anaconda3/bin/python3.7'
 java_bin = 'java'
 
-resource_log_dir = '/home/olehmatsuk/logs'
+resource_log_dir = '/home/Sherif/logs'
 
 java_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
-autoweka_jar = '/home/olehmatsuk/autoweka-2.6/autoweka.jar'
-ml_plan_dir = '/home/olehmatsuk/ailibs-0.9.0'
+autoweka_jar = '/home/Sherif/autoweka-2.6/autoweka.jar'
+ml_plan_dir = '/home/Sherif/ailibs-0.9.0'
 mlplan_jar = f'{ml_plan_dir}/AILibs-0.0.1-SNAPSHOT-all.jar'
 jars = '"' + ':'.join([os.path.abspath(java_benchmark_jar), autoweka_jar, mlplan_jar]) + '"'
 
-python2_bin = '/home/olehmatsuk/anaconda3/envs/py27/bin/python'
-recipe_dir = '/home/olehmatsuk/Recipe'
+python2_bin = '/home/Sherif/anaconda3/envs/py27/bin/python'
+recipe_dir = '/home/Sherif/Recipe'
 
 
 def split(dataset_file: str, output_dir: str, p: float = 0.75):

@@ -2,25 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b34f245-28ff-4c03-91f9-1a5b876de68c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/parser/compare_sheets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results-insights-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results_summary-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results_visualization-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/Meta.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/combine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/results-insights.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/results_summary.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/results_visualization.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Memory&amp;CPU Logging/recipeBenchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/commands.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/recipeBenchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/testes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/OBOE_benchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/examples/dataset_61_iris_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/examples/dataset_61_iris_train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/examples/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/progress.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/runOBOE.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/evolution/EvoTraining_dataset_185_yeast_train_s1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/evolution/EvoTraining_iris-Training0_s1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/fit_map/fit_CovPokElec_trains1m0_1c0_9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/fit_map/fit_KDDCup99_trains1m0_1c0_9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/fit_map/fit_dataset_185_yeast_trains1m0_1c0_9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/fit_map/fit_iris-Training0s1m0_1c0_9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/progress.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/recipeBenchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/results/Result_iris-Test0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tools Codes/hyperopt/hyperopt-sklearn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoML Benchmarking Results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AutoML Benchmarking Results.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Complete_Sheet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Complete_Sheet.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results10/Results10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results10/Results10.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results10/Results10_short.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results10/Results10_short.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results10/autoweka/autoweka.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results10/autoweka/autoweka.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results30/Results30.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results30/Results30.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results30/Results30_short.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results30/Results30_short.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results30/autoweka/autoweka.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results30/autoweka/autoweka.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results4/Results4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results4/Results4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results4/Results4_short.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results4/Results4_short.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results60/Results60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results60/Results60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results60/Results60_short.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results60/Results60_short.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/autoweka_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/autoweka_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/shorten_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/shorten_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/sklearn_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/sklearn_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/tpot_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/tpot_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark_all.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,76 +73,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/benchmark_all.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="46" column="54" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Memory&amp;CPU Logging/recipeBenchmark.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/sklearn_parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="5" column="107" selection-start-line="5" selection-start-column="107" selection-end-line="5" selection-end-column="107" />
-              <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-              <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
-              <caret line="27" column="107" selection-start-line="27" selection-start-column="107" selection-end-line="27" selection-end-column="107" />
-              <caret line="34" column="76" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
-              <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
-              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-              <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
-              <caret line="49" column="107" selection-start-line="49" selection-start-column="107" selection-end-line="49" selection-end-column="107" />
-              <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
-              <caret line="58" column="84" selection-start-line="58" selection-start-column="84" selection-end-line="58" selection-end-column="84" />
-              <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
-              <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
-              <caret line="71" column="101" selection-start-line="71" selection-start-column="101" selection-end-line="71" selection-end-column="101" />
-              <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
-              <caret line="80" column="84" selection-start-line="80" selection-start-column="84" selection-end-line="80" selection-end-column="84" />
-              <caret line="83" column="47" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
-              <caret line="83" column="66" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/compare_sheets.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="38" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,47 +93,6 @@
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/tpot_parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="5" column="92" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
-              <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-              <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <caret line="17" column="63" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/autoweka_parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="5" column="104" selection-start-line="5" selection-start-column="104" selection-end-line="5" selection-end-column="104" />
-              <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-              <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/shorten_result.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -214,7 +127,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -259,20 +172,12 @@
             <path>
               <item name="AutoMLBenchmarking" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-              <item name="Tools Codes" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoMLBenchmarking" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
               <item name="Tools Codes" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMLBenchmarking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-              <item name="Tools Codes" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-              <item name="Memory&amp;CPU Logging" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -446,7 +351,7 @@
       <workItem from="1564418365000" duration="1109000" />
       <workItem from="1564423064120" duration="5335000" />
       <workItem from="1564674007010" duration="22634000" />
-      <workItem from="1565106687290" duration="38534000" />
+      <workItem from="1565106687290" duration="39851000" />
     </task>
     <task id="LOCAL-00001" summary="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done.">
       <created>1564417718211</created>
@@ -459,12 +364,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114201000" />
+    <option name="totallyTimeSpent" value="115518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26279318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26279318" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,7 +384,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32981783" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32981783" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32981783" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32981783" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -783,6 +689,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Memory&amp;CPU Logging/recipeBenchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/parser/compare_sheets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -803,29 +728,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/benchmark_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="54" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="54" />
+        <state relative-caret-position="391">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="38" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Memory&amp;CPU Logging/recipeBenchmark.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="16" />
         </state>
       </provider>
     </entry>
