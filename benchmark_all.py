@@ -14,7 +14,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 models = ['recipe']
-time = 3
+time = 10 # in minutes
 n_runs = 1
 split_seed = 1
 

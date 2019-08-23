@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b34f245-28ff-4c03-91f9-1a5b876de68c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results-insights-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results_summary-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results_visualization-checkpoint.ipynb" afterDir="false" />
@@ -16,7 +15,6 @@
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/commands.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/recipeBenchmark.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/testes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/OBOE_benchmark.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/examples/dataset_61_iris_test.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/examples/dataset_61_iris_train.csv" afterDir="false" />
@@ -24,7 +22,6 @@
       <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/main.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/progress.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/OBOE/runOBOE.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/evolution/EvoTraining_dataset_185_yeast_train_s1.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/evolution/EvoTraining_iris-Training0_s1.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/fit_map/fit_CovPokElec_trains1m0_1c0_9" afterDir="false" />
@@ -35,9 +32,12 @@
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/progress.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/recipeBenchmark.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/results/Result_iris-Test0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tools Codes/hyperopt/hyperopt-sklearn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools Codes/OBOE" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/OBOE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools Codes/Recipe" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/Recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benchmark_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_sheet_vs_new_sheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/old_sheet_vs_new_sheet.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,44 +60,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="26" column="34" selection-start-line="33" selection-start-column="3" selection-end-line="34" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/benchmark_all.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="50" column="38" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/recipeBenchmark.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -138,7 +101,6 @@
         <option value="$PROJECT_DIR$/parser/recipe_parser.py" />
         <option value="$PROJECT_DIR$/parser/temp.py" />
         <option value="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/recipeBenchmark.py" />
-        <option value="$PROJECT_DIR$/benchmark_all.py" />
         <option value="$PROJECT_DIR$/parser/main.py" />
         <option value="$PROJECT_DIR$/parser/compin_sheets.py" />
         <option value="$PROJECT_DIR$/parser/shorten_result.py" />
@@ -147,6 +109,10 @@
         <option value="$PROJECT_DIR$/parser/autoweka_parser.py" />
         <option value="$PROJECT_DIR$/parser/compare_sheets.py" />
         <option value="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Memory&amp;CPU Logging/recipeBenchmark.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/temp_test.py" />
+        <option value="$PROJECT_DIR$/benchmark_all.py" />
+        <option value="$PROJECT_DIR$/Tools Codes/Recipe/recipeBenchmark.py" />
       </list>
     </option>
   </component>
@@ -168,16 +134,6 @@
             <path>
               <item name="AutoMLBenchmarking" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMLBenchmarking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMLBenchmarking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMLBenchmarking" type="462c0819:PsiDirectoryNode" />
-              <item name="Tools Codes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -208,29 +164,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compare_sheets">
-    <configuration name="combine" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Benchmark_Deliverables" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Logs/Results4/autosklearn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Logs/Results4/autosklearn/combine.py" />
-      <option name="PARAMETERS" value="output_dir C:\Users\HassanEldeeb\Documents\GitHub\AutoMLBenchmarking\Logs\Results4\autosklearn input_dir C:\Users\HassanEldeeb\Documents\GitHub\AutoMLBenchmarking\Logs\Results4\autosklearn" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.temp_test">
     <configuration name="compare_sheets" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Benchmark_Deliverables" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,20 +253,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="temp_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Benchmark_Deliverables" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temp_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.shorten_result" />
-      <item itemvalue="Python.combine" />
       <item itemvalue="Python.temp" />
       <item itemvalue="Python.compare_sheets" />
+      <item itemvalue="Python.temp_test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.temp_test" />
         <item itemvalue="Python.compare_sheets" />
         <item itemvalue="Python.shorten_result" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.temp" />
-        <item itemvalue="Python.combine" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +307,9 @@
       <workItem from="1564418365000" duration="1109000" />
       <workItem from="1564423064120" duration="5335000" />
       <workItem from="1564674007010" duration="22634000" />
-      <workItem from="1565106687290" duration="39851000" />
+      <workItem from="1565106687290" duration="45695000" />
+      <workItem from="1565962625357" duration="19000" />
+      <workItem from="1565962720087" duration="10246000" />
     </task>
     <task id="LOCAL-00001" summary="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done.">
       <created>1564417718211</created>
@@ -364,18 +322,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115518000" />
+    <option name="totallyTimeSpent" value="131627000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1174" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26279318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12633263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32981783" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32949087" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32949087" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -384,9 +341,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32981783" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32981783" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3304515" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32981783" />
+      <window_info anchor="bottom" id="Python Console" order="13" visible="true" weight="0.32949087" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -450,9 +407,10 @@
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$shorten_result.coverage" NAME="shorten_result Coverage Results" MODIFIED="1565261292286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$smartML_parser.coverage" NAME="smartML_parser Coverage Results" MODIFIED="1564070843547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$main.coverage" NAME="main Coverage Results" MODIFIED="1565261280333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
+    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$temp_test.coverage" NAME="temp_test Coverage Results" MODIFIED="1565874160481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$combine.coverage" NAME="combine Coverage Results" MODIFIED="1564589044347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Logs/Results4/autosklearn" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$tpot_parser.coverage" NAME="tpot_parser Coverage Results" MODIFIED="1564074175830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$compare_sheets.coverage" NAME="compare_sheets Coverage Results" MODIFIED="1565261408023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
+    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$compare_sheets.coverage" NAME="compare_sheets Coverage Results" MODIFIED="1565873742022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$skleran_parser.coverage" NAME="skleran_parser Coverage Results" MODIFIED="1564072412366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$temp.coverage" NAME="temp Coverage Results" MODIFIED="1565187649583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
   </component>
@@ -581,13 +539,7 @@
     <entry file="file://$PROJECT_DIR$/parser/test.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/temp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/temp.py" />
     <entry file="file://$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/benchmark_all.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -605,9 +557,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/compin_sheets.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/compin_sheets.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pandas/core/generic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -672,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="26" column="34" selection-start-line="33" selection-start-column="3" selection-end-line="34" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parser/shorten_result.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -718,10 +658,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/log.txt" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/tmp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/python/recipeBenchmark.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="459">
           <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools Codes/Recipe/recipeBenchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -730,10 +696,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/benchmark_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="50" column="38" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="38" />
+        <state relative-caret-position="69">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="34" selection-start-line="33" selection-start-column="3" selection-end-line="34" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
