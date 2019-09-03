@@ -116,7 +116,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="933" />
@@ -309,7 +309,7 @@
       <workItem from="1564674007010" duration="22634000" />
       <workItem from="1565106687290" duration="45695000" />
       <workItem from="1565962625357" duration="19000" />
-      <workItem from="1565962720087" duration="10246000" />
+      <workItem from="1565962720087" duration="10821000" />
     </task>
     <task id="LOCAL-00001" summary="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done.">
       <created>1564417718211</created>
@@ -322,10 +322,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131627000" />
+    <option name="totallyTimeSpent" value="132202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1174" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1174" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12633263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
