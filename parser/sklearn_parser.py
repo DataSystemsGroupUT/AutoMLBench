@@ -1,5 +1,7 @@
 import pandas as pd
 import os
+import ast
+import numpy as np
 
 
 def parse_sklearn_v(directory):
@@ -21,6 +23,7 @@ def parse_sklearn_v(directory):
                                        'time_mean': 'sklearn_v_time_mean'}, inplace=True)
                 # result = result.append(sub_result)
                 result = pd.concat([result, sub_result], axis=0, sort=True)
+    result.sklearn_v_model_1 = result.sklearn_v_model_1.apply(get_class)
     return result
 
 
@@ -43,6 +46,7 @@ def parse_sklearn_m(directory):
                                        'time_mean': 'sklearn_m_time_mean'}, inplace=True)
                 # result = result.append(sub_result)
                 result = pd.concat([result, sub_result], axis=0, sort=True)
+    result.sklearn_m_model_1 = result.sklearn_m_model_1.apply(get_class)
     return result
 
 
@@ -65,6 +69,7 @@ def parse_sklearn_e(directory):
                                        'time_mean': 'sklearn_e_time_mean'}, inplace=True)
                 # result = result.append(sub_result)
                 result = pd.concat([result, sub_result], axis=0, sort=True)
+    result.sklearn_e_model_1 = result.sklearn_e_model_1.apply(get_class)
     return result
 
 
@@ -87,8 +92,20 @@ def parse_sklearn(directory):
                                        'time_mean': 'sklearn_time_mean'}, inplace=True)
                 # result = result.append(sub_result)
                 result = pd.concat([result, sub_result], axis=0, sort=True)
+    result.sklearn_model_1 = result.sklearn_model_1.apply(get_class)
     return result
 
+def get_class (model):
+    if isinstance(model, str):
+        model = '{' +'}'.join('{'.join(model.split('{')[1:]).split('}')[0:1]) + '}'
+        m = ast.literal_eval(model)
+        if 'classifier:__choice__' in m:
+            classifier = m['classifier:__choice__']
+        else:
+            classifier = ''
+        return classifier
+    else:
+        return ''
 
 def main():
     path = r'C:\Users\HassanEldeeb\Desktop\Benchmark_Deliverables\Logs\Results10\autosklearn'

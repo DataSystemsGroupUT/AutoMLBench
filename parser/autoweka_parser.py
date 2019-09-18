@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-
+import ast
 
 def parse_autoweka(directory):
     result = pd.DataFrame(columns=['autoweka_accuracy_mean', 'autoweka_f1_score_mean', 'autoweka_model_1',
@@ -21,7 +21,21 @@ def parse_autoweka(directory):
                                        'time_mean': 'autoweka_time_mean'}, inplace=True)
                 #result = result.append(sub_result)
                 result = pd.concat([result, sub_result], axis=0, sort=True)
+    result.autoweka_model_1 = result.autoweka_model_1.apply(get_class)
     return result
+
+def get_class (model):
+    if isinstance(model, str):
+        tmp = model.split('weka.classifiers.')[1]
+        classifier = tmp.split('\n')[0]
+
+        if classifier:
+            return classifier
+        else:
+            return ''
+    else:
+        return ''
+
 
 
 def main():
