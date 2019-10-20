@@ -32,21 +32,36 @@
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/progress.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/recipeBenchmark.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/results/Result_iris-Test0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metafeatures_extractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_3C_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_DT_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_SVC_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_1_acc.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_3x_acc.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_3C_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_DT_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_RF_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_SVC_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_default_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_3C_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_DF_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_RF_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_SVC_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary__default_3x_acc.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_default_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_3C_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_DT_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_RF_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_SVC_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_default_3x_F1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analysis/Analysis-New.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/Analysis-New.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Complete_Sheet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Complete_Sheet.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results10/Results10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results10/Results10.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results30/Results30.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results30/Results30.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results4/Results4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results4/Results4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Results60/Results60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Results60/Results60.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools Codes/OBOE" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/OBOE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools Codes/Recipe" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/Recipe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/autoweka_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/autoweka_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/sklearn_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/sklearn_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/tpot_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/tpot_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark_all.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,32 +90,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>sklearn</find>
-      <find>autoeweka</find>
-      <find>sklearn_e</find>
-      <find>time_result</find>
-      <find>tb_result</find>
-      <find>val</find>
-      <find>axis=1</find>
-      <find>col, axis='columns'</find>
-      <find>autoweka</find>
-      <find>python_bin</find>
-      <find>progress</find>
-      <find>execfile</find>
-      <find>model_mean</find>
-      <find>min</find>
-      <find>_1</find>
-      <find>main</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QYVI2MHEzBThDLWGKgvYyUDLEB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -121,7 +119,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.__init__">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Benchmark_Deliverables" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="compare_sheets" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Benchmark_Deliverables" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -188,28 +208,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Benchmark_Deliverables" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parser" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parser/temp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="temp_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Benchmark_Deliverables" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -235,17 +233,17 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.shorten_result" />
-      <item itemvalue="Python.temp" />
       <item itemvalue="Python.compare_sheets" />
       <item itemvalue="Python.temp_test" />
+      <item itemvalue="Python.__init__" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.temp_test" />
         <item itemvalue="Python.compare_sheets" />
         <item itemvalue="Python.shorten_result" />
-        <item itemvalue="Python.temp" />
       </list>
     </recent_temporary>
   </component>
@@ -271,6 +269,10 @@
       <workItem from="1567947210745" duration="48000" />
       <workItem from="1567947442132" duration="18995000" />
       <workItem from="1568295818775" duration="1772000" />
+      <workItem from="1570011866268" duration="1463000" />
+      <workItem from="1570111896671" duration="2619000" />
+      <workItem from="1570720071415" duration="6969000" />
+      <workItem from="1571051772763" duration="1278000" />
     </task>
     <task id="LOCAL-00001" summary="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done.">
       <created>1564417718211</created>
@@ -299,6 +301,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done." />
     <option name="LAST_COMMIT_MESSAGE" value="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done." />
   </component>
@@ -336,16 +339,17 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$recipe_parser.coverage" NAME="recipe_parser Coverage Results" MODIFIED="1563996863575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
+    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$main.coverage" NAME="main Coverage Results" MODIFIED="1568100026088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
+    <SUITE FILE_PATH="coverage/Benchmark_Deliverables$skleran_parser.coverage" NAME="skleran_parser Coverage Results" MODIFIED="1564072412366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
+    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$temp_test.coverage" NAME="temp_test Coverage Results" MODIFIED="1567948454978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$combine.coverage" NAME="combine Coverage Results" MODIFIED="1564589044347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Logs/Results4/autosklearn" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$smartML_parser.coverage" NAME="smartML_parser Coverage Results" MODIFIED="1564070843547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$tpot_parser.coverage" NAME="tpot_parser Coverage Results" MODIFIED="1564074175830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$temp.coverage" NAME="temp Coverage Results" MODIFIED="1565187649583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$shorten_result.coverage" NAME="shorten_result Coverage Results" MODIFIED="1565261292286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$main.coverage" NAME="main Coverage Results" MODIFIED="1568100026088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$autoweka_parser.coverage" NAME="autoweka_parser Coverage Results" MODIFIED="1564072619245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/Benchmark_Deliverables$skleran_parser.coverage" NAME="skleran_parser Coverage Results" MODIFIED="1564072412366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$temp_test.coverage" NAME="temp_test Coverage Results" MODIFIED="1567948454978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$combine.coverage" NAME="combine Coverage Results" MODIFIED="1564589044347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Logs/Results4/autosklearn" />
     <SUITE FILE_PATH="coverage/Benchmark_Deliverables$main.coverage" NAME="main Coverage Results" MODIFIED="1564417174994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
+    <SUITE FILE_PATH="coverage/AutoMLBenchmarking$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1570731700677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
     <SUITE FILE_PATH="coverage/AutoMLBenchmarking$compare_sheets.coverage" NAME="compare_sheets Coverage Results" MODIFIED="1565873742022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
   </component>
 </project>

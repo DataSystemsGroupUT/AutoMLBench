@@ -13,9 +13,9 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-models = ['recipe']
-time = 10 # in minutes
-n_runs = 1
+models = ['tpot']
+time = 30 # in minutes
+n_runs = 3
 split_seed = 1
 
 python_bin = '/home/Sherif/anaconda3/bin/python3.7'
@@ -41,6 +41,7 @@ def split(dataset_file: str, output_dir: str, p: float = 0.75):
     test.to_csv(os.path.join(output_dir, f'{name}_test.csv'), index=False)
 
 
+
 def benchmark(model: str, train_file: str, test_file: str, output_file: str):
     cmd = None
     if model in ['autosklearn', 'autosklearn-v', 'autosklearn-m', 'autosklearn-e', 'tpot']:
@@ -58,9 +59,15 @@ def benchmark(model: str, train_file: str, test_file: str, output_file: str):
                         model, os.path.abspath(train_file), os.path.abspath(test_file),
                         os.path.abspath(output_file), str(time)])
     if cmd:
-        proc = subprocess.Popen("exec " + cmd, shell=True, stderr=subprocess.STDOUT)
-        logger(proc.pid)
-        proc.wait()
+        try:
+            proc = subprocess.Popen("exec " + cmd, shell=True, stderr=subprocess.STDOUT)
+            logger(proc.pid)
+            proc.wait(timeout=time*60*1.5)
+        except TimeoutExpired:
+            print("Timeout Expired")
+            #exit()
+        finally:
+            proc.terminate()
 
 
 def collect(output_dir: str, collect_dir: str):
@@ -144,8 +151,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     input_dir, output_dir = args.input_dir, args.output_dir
 
-    tmp_splits = 'splits'
-    tmp_output = 'output'
+    tmp_splits = '/home/Sherif/AutoMLBenchmarking/splits'
+    tmp_output = '/home/Sherif/AutoMLBenchmarking/output'
 
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
     runs = list(range(1, n_runs + 1))
