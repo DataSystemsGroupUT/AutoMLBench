@@ -101,9 +101,9 @@ class SklearnBenchmark(ModelBenchmark, ABC):
         predictions = model.predict(X)
         return {
             'accuracy': accuracy_score(y, predictions),
-            'precision': precision_score(y, predictions, average='weighted'),
-            'recall': recall_score(y, predictions, average='weighted'),
-            'f1score': f1_score(y, predictions, average='weighted')
+            'precision': precision_score(y, predictions, average='binary'),
+            'recall': recall_score(y, predictions, average='binary'),
+            'f1score': f1_score(y, predictions, average='binary')
         }
 
 
@@ -142,13 +142,13 @@ class AutoSklearnEnsBenchmark(AutoSklearnBenchmark):
         return AutoSklearnClassifier(time_left_for_this_task=(time if time is None else 60 * time_limit),
                                      ml_memory_limit=6144, ensemble_memory_limit=2048,
                                      initial_configurations_via_metalearning=0)
-    
+
 
 class TPOTBenchmark(SklearnBenchmark):
-
     def _init_model(self, time_limit: int = None):
         return TPOTClassifier(max_time_mins=time_limit, verbosity=3,
-                              periodic_checkpoint_folder='tpot_pipelines')
+                              periodic_checkpoint_folder='tpot_pipelines', scoring='f1',
+                              config_dict={'sklearn.svm.SVC': {}})
 
     def _best_model(self, model):
         return model.fitted_pipeline_
@@ -163,7 +163,7 @@ class RecipeBenchmark(ModelBenchmark):
 
         self._timeout(self._fit_model, (dataset_file, dataset_test_file, time_limit, config), time_limit, result)
         try:
-            #result.update
+            # result.update
             print('Evaluate here')
 
         except Exception as e:

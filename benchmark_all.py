@@ -18,19 +18,19 @@ time = 30 # in minutes
 n_runs = 3
 split_seed = 1
 
-python_bin = '/home/Sherif/anaconda3/bin/python3.7'
+python_bin = '/home/Eldeeb/anaconda3/bin/python3.7'
 java_bin = 'java'
 
-resource_log_dir = '/home/Sherif/logs'
+resource_log_dir = '/home/Eldeeb/logs'
 
 java_benchmark_jar = 'java/automl-benchmarking-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
-autoweka_jar = '/home/Sherif/autoweka-2.6/autoweka.jar'
-ml_plan_dir = '/home/Sherif/ailibs-0.9.0'
+autoweka_jar = '/home/Eldeeb/autoweka-2.6/autoweka.jar'
+ml_plan_dir = '/home/Eldeeb/ailibs-0.9.0'
 mlplan_jar = f'{ml_plan_dir}/AILibs-0.0.1-SNAPSHOT-all.jar'
 jars = '"' + ':'.join([os.path.abspath(java_benchmark_jar), autoweka_jar, mlplan_jar]) + '"'
 
-python2_bin = '/home/Sherif/anaconda3/envs/py27/bin/python'
-recipe_dir = '/home/Sherif/Recipe'
+python2_bin = '/home/Eldeeb/anaconda3/envs/py27/bin/python'
+recipe_dir = '/home/Eldeeb/Recipe'
 
 
 def split(dataset_file: str, output_dir: str, p: float = 0.75):
@@ -151,8 +151,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     input_dir, output_dir = args.input_dir, args.output_dir
 
-    tmp_splits = '/home/Sherif/AutoMLBenchmarking/splits'
-    tmp_output = '/home/Sherif/AutoMLBenchmarking/output'
+    tmp_splits = '/home/Eldeeb/AutoMLBenchmarking/splits'
+    tmp_output = '/home/Eldeeb/AutoMLBenchmarking/output'
 
     datasets = [file for file in os.listdir(input_dir) if file.endswith('.csv')]
     runs = list(range(1, n_runs + 1))
