@@ -1,5 +1,10 @@
 ## Experimental Setup
 
-Our experiments have been conducted on Google Cloud machines, each machine is configured with 2 vCPUs, 7.5 GB RAM and ubuntu-minimal-1804-bionic. we used the 100 datasets. For our study, we have run each experiment 4 times with 4 different time budgets: 10, 30, 60 and 240 minutes. We have used AutoSklearn, the winner of two ChaLearn AutoML challenges, as our experimental AutoML framework.
+### Benchmarking Environment
 
-AutoSklearn is implemented on top of Scikit-Learn, a popular Python machine learning package. AutoSklearn uses Sequential Model-based  Algorithm Configuration (SMAC) as a Bayesian optimization technique. AutoSklearn allows the end-users to enable/disable the different optimization options including using of meta-learning (AutoSKLearn-m), ensembling (AutoSKLearn-e) in addition  to  the  full  version  where  all  options  are  enabled.
+Our experiments have been conducted on Google Cloud machines, each machine is configured with 2 vCPUs, 7.5 GB RAM and ubuntu-minimal-1804-bionic. Since each programming language manages memory differently, Some memory leakage may happen. So, We have rebooted the machine after each run to ensure that each experiment has the same available memory size.
+
+
+### Evaluation Metrics
+
+We have considered two evaluation metrics: accuracy and F1 score. Accuracy is the most intuitive metric. it is simply the ratio of the correctly classified instances to the total number of instances. F1 Score is the weighted average of Recall and Precision which makes it an expressive performance metric for unbalanced datasets.
