@@ -1,4 +1,4 @@
-# AUTOML tools 
+# AutoML tools 
 
 - [AutoSklearn](#autosklearn)
 - [TPOT](#tpot)
