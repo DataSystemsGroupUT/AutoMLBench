@@ -1,5 +1,10 @@
 ## Benchmark Datasets
 We used 100 datasets from [OpenML](https://www.openml.org/) repository. We selected them to cover different characteristics of datasets including the number of classes, number of instances, number of features, etc.
+### Datasets Overview 
+
+An overview of these characteristics is shown in the following figure. For example, 50% are binary-class datasets and 50% multi-class datasets. To ensure fairness between all of the benchmarked frameworks, we did not apply any preprocessing algorithms over the datasets. This also will avoid any bias impact over the classifiers’ performance.
+
+![test](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/datasets_overview.png?token=ABVXF3UG52CNOYHWADYS4XK6N5XLQ )
 
 ### Download Datasets
 [Compressed file download link.](https://drive.google.com/file/d/1YjI6UJhf5_VgQjQ1bCNLk3o-d6KY5-3W/) 
