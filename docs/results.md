@@ -2,7 +2,12 @@
 # Results
 * [Tables and Results Summaries](#tables-and-results-summaries)
   * [Summary of Frameworks](#summary-of-frameworks)
-  * [Vanilla Version Vs Meta-learning](vanilla-version-vs-meta-learning)
+  * [Vanilla Version Vs Meta-learning](#vanilla-version-vs-meta-learning)
+  * [Wilcoxon Test Summary](#wilcoxon-test-summary)
+    * [10  Minutes](#10-minutes)
+    * [30  Minutes](#30-minutes)
+    * [60  Minutes](#60-minutes)
+    * [240  Minutes](#240-minutes)
 * [Impact of Meta-learning](#impact-of-meta-learning)
 * [Impact of Ensembling](#impact-of-ensembling)
 * [Impact of Combined Meta-Learning and Ensembling](#impact-of-combined-meta-learning-and-ensembling)
@@ -31,6 +36,63 @@
 | 60 Min | AutoSKLearn-m  <br>AutoSKLearn-v | 99<br>99 | 0.873<br>0.874 | 0.141<br>0.137 |
 | 240 Min | AutoSKLearn-m  <br>AutoSKLearn-v | 99<br>99 | 0.877 <br>0.872 | 0.136<br>0.149 |
 
+### Wilcoxon Test Summary
+
+#### 10 Minutes
+|ATM | AutoWeka | Recipe | Auto SKLearn-e | Auto SKLearn-m | Auto SKLearn-v | Auto SKLearn | SmartML | TPOT|
+|---|---|---|---|---|---|---|---|---|
+|ATM | 0.002 | 0.313 | 0.965 | 0.557 | 0.527 | 0.446 | 0.044 | 0.597|
+|AutoWeka | 0.002 | 0.050 | 0.000 | 0.000 | 0.000 | 0.000 | 0.143 | 0.053|
+|Recipe | 0.313 | 0.050 | 0.023 | 0.072 | 0.399 | 0.004 | 0.214 | 0.386|
+|AutoSKLearn-e | 0.965 | 0.000 | 0.023 | 0.941 | 0.016 | 0.006 | 0.001 | 0.737|
+|AutoSKLearn-m | 0.557 | 0.000 | 0.072 | 0.941 | 0.007 | 0.008 | 0.000 | 0.288|
+|AutoSKLearn-v | 0.527 | 0.000 | 0.399 | 0.016 | 0.007 | 0.000 | 0.004 | 0.017|
+|AutoSKLearn | 0.446 | 0.0 | 0.004 | 0.006 | 0.008 | 0.0 | 0.0 | 0.491|
+|SmartML | 0.044 | 0.143 | 0.214 | 0.001 | 0.0 | 0.004 | 0.0 | 0.002|
+|TPOT | 0.597 | 0.053 | 0.386 | 0.737 | 0.288 | 0.017 | 0.491 | 0.002|
+
+#### 30 Minutes
+
+|ATM | AutoWeka | Recipe | AutoSKLearn-e | AutoSKLearn-m | AutoSKLearn-v | AutoSKLearn | SmartML | TPOT|
+|---|---|---|---|---|---|---|---|---|
+|ATM | 0.002 | 0.26 | 0.981 | 0.283 | 0.136 | 0.883 | 0.002 | 0.87|
+|AutoWeka | 0.002 | 0.322 | 0.0 | 0.0 | 0.0 | 0.0 | 0.565 | 0.001|
+|Recipe | 0.26 | 0.322 | 0.0 | 0.002 | 0.048 | 0.0 | 0.021 | 0.0|
+|AutoSKLearn-e | 0.981 | 0.0 | 0.0 | 0.001 | 0.0 | 0.209 | 0.0 | 0.917|
+|AutoSKLearn-m | 0.283 | 0.0 | 0.002 | 0.001 | 0.093 | 0.137 | 0.0 | 0.124|
+|AutoSKLearn-v | 0.136 | 0.0 | 0.048 | 0.0 | 0.093 | 0.002 | 0.007 | 0.002|
+|AutoSKLearn | 0.883 | 0.0 | 0.0 | 0.209 | 0.137 | 0.002 | 0.0 | 0.137|
+|SmartML | 0.002 | 0.565 | 0.021 | 0.0 | 0.0 | 0.007 | 0.0 | 0.0|
+|TPOT | 0.87 | 0.001 | 0.0 | 0.917 | 0.124 | 0.002 | 0.137 | 0.0|
+
+#### 60 Minutes
+
+|ATM | AutoWeka | Recipe | AutoSKLearn-e | AutoSKLearn-m | AutoSKLearn-v | AutoSKLearn | SmartML | TPOT|
+|---|---|---|---|---|---|---|---|---|
+|ATM | 0.001 | 0.176 | 0.083 | 0.482 | 0.585 | 0.14 | 0.001 | 0.093|
+|AutoWeka | 0.001 | 0.081 | 0.0 | 0.0 | 0.0 | 0.0 | 0.345 | 0.0|
+|Recipe | 0.176 | 0.081 | 0.0 | 0.025 | 0.01 | 0.0 | 0.014 | 0.0|
+|AutoSKLearn-e | 0.083 | 0.0 | 0.0 | 0.007 | 0.001 | 0.326 | 0.0 | 0.32|
+|AutoSKLearn-m | 0.482 | 0.0 | 0.025 | 0.007 | 0.544 | 0.0 | 0.001 | 0.027|
+|AutoSKLearn-v | 00.585 | 0.0 | 0.01 | 0.001 | 0.544 | 0.0 | 0.003 | 0.006|
+|AutoSKLearn | 0.14 | 0.0 | 0.0 | 0.326 | 0.0 | 0.0 | 0.0 | 0.686|
+|SmartML | 0.001 | 0.345 | 0.014 | 0.0 | 0.001 | 0.003 | 0.0 | 0.0|
+|TPOT | 0.093 | 0.0 | 0.0 | 0.32 | 0.027 | 0.006 | 0.686 | 0.0|
+
+#### 240 Minutes
+
+|ATM | AutoWeka | Recipe | AutoSKLearn-e | AutoSKLearn-m | AutoSKLearn-v | AutoSKLearn | SmartML | TPOT|
+|---|---|---|---|---|---|---|---|---|
+|ATM | 0.045 | 0.101 | 0.535 | 0.877 | 0.788 | 0.561 | 0.001 | 0.092|
+|AutoWeka | 0.045 | 0.487 | 0.0 | 0.0 | 0.001 | 0.0 | 0.58 | 0.0|
+|Recipe | 0.101 | 0.487 | 0.0 | 0.002 | 0.0 | 0.0 | 0.052 | 0.0|
+|AutoSKLearn-e | 0.535 | 0.0 | 0.0 | 0.006 | 0.016 | 0.477 | 0.0 | 0.139|
+|AutoSKLearn-m | 0.877 | 0.0 | 0.002 | 0.006 | 0.957 | 0.0 | 0.0 | 0.001|
+|AutoSKLearn-v | 0.788 | 0.001 | 0.0 | 0.016 | 0.957 | 0.0 | 0.0 | 0.0|
+|AutoSKLearn | 0.561 | 0.0 | 0.0 | 0.477 | 0.0 | 0.0 | 0.0 | 0.156|
+|SmartML | 0.001 | 0.58 | 0.052 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0|
+|TPOT | 0.092 | 0.0 | 0.0 | 0.139 | 0.001 | 0.0 | 0.156 | 0.0|
+|
 
 ### Impact of Meta-learning
 ![meta1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/006MetaLearningEffectAll10min.png)
