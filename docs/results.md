@@ -15,7 +15,7 @@
 ### Summary of Frameworks
 
 | Time Budget | Framework | N | Mean | SD |
-|-------|---------------------------------------|--------------------|----------------------|------------------------------------|
+|---|---|---|---|---|
 | 10 Min | ATM <br> AutoWeka <br> Recipe <br> AutoSKLearn-e <br> AutoSKLearn-m <br> AutoSKLearn-v <br> AutoSKLearn <br> SmartML <br> TPOT | 75 <br> 86 <br>33 <br>99 <br>99<br> 99 <br>99<br> 89<br> 43 | 0.888 <br>0.848<br> 0.84 <br>0.873 <br>0.87<br> 0.868 <br> 0.873<br> 0.799 <br>0.894 | 0.123 <br>0.161<br> 0.176 <br>0.139<br> 0.144 <br>0.145<br> 0.143 <br>0.212 <br>0.117 |
 | 30 Min | ATM <br> AutoWeka <br> Recipe <br> AutoSKLearn-e <br> AutoSKLearn-m <br> AutoSKLearn-v <br> AutoSKLearn <br> SmartML <br> TPOT | 74 <br>90<br> 69<br> 99<br> 99 <br>99 <br>99 <br>90<br> 59 | 0.903<br> 0.845<br> 0.855 <br>0.88 <br>0.873<br> 0.873 <br>0.876 <br>0.808<br> 0.885 | 0.116<br> 0.161<br> 0.144<br> 0.136 <br>0.143 <br>0.142 <br>0.139 <br>0.199 <br>0.136 |
 | 60 Min | ATM <br> AutoWeka <br> Recipe <br> AutoSKLearn-e <br> AutoSKLearn-m <br> AutoSKLearn-v <br> AutoSKLearn <br> SmartML <br> TPOT | 79 <br>91 <br>76 <br>99<br> 99<br> 99<br> 99<br> 89<br> 70 | 0.89<br> 0.844 <br>0.864 <br>0.884<br> 0.873<br> 0.874 <br>0.882 <br>0.816 <br>0.89 | 0.126 <br>0.157 <br>0.139 <br>0.132<br> 0.141 <br>0.137 <br>0.133 <br>0.194 <br>0.131 |
