@@ -39,6 +39,7 @@
 ### Wilcoxon Test Summary
 
 #### 10 Minutes
+
 |ATM | AutoWeka | Recipe | Auto SKLearn-e | Auto SKLearn-m | Auto SKLearn-v | Auto SKLearn | SmartML | TPOT|
 |---|---|---|---|---|---|---|---|---|
 |ATM | 0.002 | 0.313 | 0.965 | 0.557 | 0.527 | 0.446 | 0.044 | 0.597|
@@ -53,7 +54,7 @@
 
 #### 30 Minutes
 
-|ATM | AutoWeka | Recipe | AutoSKLearn-e | AutoSKLearn-m | AutoSKLearn-v | AutoSKLearn | SmartML | TPOT|
+|ATM | AutoWeka | Recipe | Auto SKLearn-e | Auto SKLearn-m | Auto SKLearn-v | Auto SKLearn | SmartML | TPOT|
 |---|---|---|---|---|---|---|---|---|
 |ATM | 0.002 | 0.26 | 0.981 | 0.283 | 0.136 | 0.883 | 0.002 | 0.87|
 |AutoWeka | 0.002 | 0.322 | 0.0 | 0.0 | 0.0 | 0.0 | 0.565 | 0.001|
@@ -67,7 +68,7 @@
 
 #### 60 Minutes
 
-|ATM | AutoWeka | Recipe | AutoSKLearn-e | AutoSKLearn-m | AutoSKLearn-v | AutoSKLearn | SmartML | TPOT|
+|ATM | AutoWeka | Recipe | Auto SKLearn-e | Auto SKLearn-m | Auto SKLearn-v | Auto SKLearn | SmartML | TPOT|
 |---|---|---|---|---|---|---|---|---|
 |ATM | 0.001 | 0.176 | 0.083 | 0.482 | 0.585 | 0.14 | 0.001 | 0.093|
 |AutoWeka | 0.001 | 0.081 | 0.0 | 0.0 | 0.0 | 0.0 | 0.345 | 0.0|
@@ -81,7 +82,7 @@
 
 #### 240 Minutes
 
-|ATM | AutoWeka | Recipe | AutoSKLearn-e | AutoSKLearn-m | AutoSKLearn-v | AutoSKLearn | SmartML | TPOT|
+|ATM | AutoWeka | Recipe | Auto SKLearn-e | Auto SKLearn-m | Auto SKLearn-v | Auto SKLearn | SmartML | TPOT|
 |---|---|---|---|---|---|---|---|---|
 |ATM | 0.045 | 0.101 | 0.535 | 0.877 | 0.788 | 0.561 | 0.001 | 0.092|
 |AutoWeka | 0.045 | 0.487 | 0.0 | 0.0 | 0.001 | 0.0 | 0.58 | 0.0|
