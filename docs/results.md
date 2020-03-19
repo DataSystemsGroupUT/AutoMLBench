@@ -8,6 +8,7 @@
     * [30  Minutes](#30-minutes)
     * [60  Minutes](#60-minutes)
     * [240  Minutes](#240-minutes)
+* [Tools Performance Summary](tools-performance-summary)
 * [Impact of Meta-learning](#impact-of-meta-learning)
 * [Impact of Ensembling](#impact-of-ensembling)
 * [Impact of Combined Meta-Learning and Ensembling](#impact-of-combined-meta-learning-and-ensembling)
@@ -93,7 +94,14 @@
 |AutoSKLearn | 0.561 | 0.0 | 0.0 | 0.477 | 0.0 | 0.0 | 0.0 | 0.156|
 |SmartML | 0.001 | 0.58 | 0.052 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0|
 |TPOT | 0.092 | 0.0 | 0.0 | 0.139 | 0.001 | 0.0 | 0.156 | 0.0|
-|
+
+## Tools Performance Summary
+
+![all1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/001SuccessRateAll.png?token=ABVXF3UEUELS3V2WHMHMCNC6PSP5K)
+![all2](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/002BestPerformanceAll.png?token=ABVXF3UWZPF5WZFEZY3XKU26PSQOM)
+![all3](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/003WorstPerformanceAll.png?token=ABVXF3WSYE3I67I2ZZRELTC6PSQSI)
+![all4](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/004BestTimeBudgetsAll.png?token=ABVXF3QRTGWNGPSMCMF2G5S6PSQV2)
+
 
 ### Impact of Meta-learning
 ![meta1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/006MetaLearningEffectAll10min.png)
