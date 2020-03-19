@@ -13,6 +13,7 @@ We analyze the underlying techniques, and experimentally study the promising are
       * [30  Minutes](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#30-minutes)
       * [60  Minutes](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#60-minutes)
       * [240  Minutes](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#240-minutes)
+  * [Tools Performance Summary](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#tools-performance-summary)   
   * [Impact of Meta-learning](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-meta-learning)
   * [Impact of Ensembling](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-ensembling)
   * [Impact of Combined Meta-Learning and Ensembling](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-combined-meta-learning-and-ensembling)
