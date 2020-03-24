@@ -137,17 +137,16 @@
 ![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-60_Min).png)
 
 #### Impact of Time Budget TPOT
-![time](https://github.com/DataSystemsGroupUT/AutoMLBenchmarking/blob/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(30_Min-10_Min)%20-%20Copy-1.png?raw=true)
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(30_Min-10_Min)%20-%20Copy-1.png?token=ABVXF3UEV3S5FO4PIVV7AAC6QPHRM)
 
-![time](https://github.com/DataSystemsGroupUT/AutoMLBenchmarking/blob/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(60_Min-10_Min)%20-%20Copy-1.png?raw=true)
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(60_Min-10_Min)%20-%20Copy-1.png?token=ABVXF3WHE3LOGICBU5CJGF26QPHWM)
 
-![time](https://github.com/DataSystemsGroupUT/AutoMLBenchmarking/blob/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-10_Min)%20-%20Copy-1.png?raw=true)
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-10_Min)%20-%20Copy-1.png?token=ABVXF3SFIIQPECR4B73FAF26QPHXM)
 
-![time](https://github.com/DataSystemsGroupUT/AutoMLBenchmarking/blob/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-10_Min)%20-%20Copy-1.png?raw=true)
 
-![time](https://github.com/DataSystemsGroupUT/AutoMLBenchmarking/blob/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-30_Min)%20-%20Copy-1.png?raw=true)
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-30_Min)%20-%20Copy-1.png?token=ABVXF3XRUHOTWWXSNJ4XHCC6QPHZY)
 
-![time](https://github.com/DataSystemsGroupUT/AutoMLBenchmarking/blob/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-60_Min)%20-%20Copy-1.png?raw=true)
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-60_Min)%20-%20Copy-1.png?token=ABVXF3UGZM4SMATME3Z4VRS6QPH2O)
 
 ### Impact of Meta-learning
 ![meta1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/006MetaLearningEffectAll10min.png)
