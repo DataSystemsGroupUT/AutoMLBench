@@ -14,9 +14,12 @@ We analyze the underlying techniques, and experimentally study the promising are
       * [60  Minutes](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#60-minutes)
       * [240  Minutes](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#240-minutes)
   * [Tools Performance Summary](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#tools-performance-summary)   
+   * [Impact of Time Budget](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-time-budget)
+       * [Impact of Time Budget AutoSKLearn](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-time-budget-autosklearn)
+       * [Impact of Time Budget TPOT](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-time-budget-tpot)
+       * [Impact of Time Budget ATM](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-time-budget-atm)
   * [Impact of Meta-learning](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-meta-learning)
   * [Impact of Ensembling](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-ensembling)
   * [Impact of Combined Meta-Learning and Ensembling](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-combined-meta-learning-and-ensembling)
-  * [Impact of Time Budget](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-time-budget)
   * [Impact of Search Space](https://datasystemsgrouput.github.io/AutoMLBenchmarking/results#impact-of-search-space)
 
