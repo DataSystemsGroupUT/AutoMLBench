@@ -12,6 +12,7 @@
 * [Impact of Time Budget](#impact-of-time-budget)
     * [Impact of Time Budget AutoSKLearn](#impact-of-time-budget-autosklearn)
     * [Impact of Time Budget TPOT](#impact-of-time-budget-tpot)
+    * [Impact of Time Budget ATM](#impact-of-time-budget-atm)
 * [Impact of Meta-learning](#impact-of-meta-learning)
 * [Impact of Ensembling](#impact-of-ensembling)
 * [Impact of Combined Meta-Learning and Ensembling](#impact-of-combined-meta-learning-and-ensembling)
@@ -147,6 +148,19 @@
 ![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-30_Min)%20-%20Copy-1.png?token=ABVXF3XRUHOTWWXSNJ4XHCC6QPHZY)
 
 ![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-60_Min)%20-%20Copy-1.png?token=ABVXF3UGZM4SMATME3Z4VRS6QPH2O)
+#### Impact of Time Budget ATM
+
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(30_Min-10_Min)-1.png?token=ABVXF3VOA74AOB4GCLXCVH26QPJNM)
+
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(60_Min-10_Min)-1.png?token=ABVXF3VAMZAMXYJVA7YYPVK6QPJPA)
+
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(4_Hours-10_Min)-1.png?token=ABVXF3UUGYA3U4GVF5KH7MK6QPJR6)
+
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(60_Min-30_Min)-1.png?token=ABVXF3UAI2FWAX6TMVNMQDS6QPJQK)
+
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(4_Hours-30_Min)-1.png?token=ABVXF3VNNIOEAYBXHTMSHIC6QPJT6)
+
+![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(4_Hours-60_Min)-1.png?token=ABVXF3S3NA3LLD6YUHBF2PK6QPJV6)
 
 ### Impact of Meta-learning
 ![meta1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/006MetaLearningEffectAll10min.png)
