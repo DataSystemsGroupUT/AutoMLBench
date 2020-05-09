@@ -2,97 +2,89 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b34f245-28ff-4c03-91f9-1a5b876de68c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/Analysis_bench-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/Analysis_bench_wilcoxon-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/Analysis_search_space-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/Analysis_wilcoxon-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/cdf_figures-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova_atm-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova_binary-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova_binary_atm-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova_multi-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova_multi_atm-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova_tpot-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/one_way_anova_binary-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/one_way_anova_binary_atm-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/one_way_anova_multi-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/one_way_anova_multi_atm-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/one_way_anova_time_budget_atm-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/one_way_anova_time_buget_analysis-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/Analysis_bench.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/Analysis_bench_wilcoxon.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/Analysis_search_space.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/Analysis_wilcoxon.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Comparing_TPOT_Acc_with_Recipe_Acc_(10_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Comparing_TPOT_Acc_with_Recipe_Acc_(30_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Comparing_TPOT_Acc_with_Recipe_Acc_(4_Hours).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Comparing_TPOT_Acc_with_Recipe_Acc_(60_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(10_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(30_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(4_Hourse).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(60_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(10_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(30_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(4_Hours).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(60_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_10_Min_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_60_Min_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(10_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(30_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(4_Hours).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(60_Min).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn-e.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn-e_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn-m.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn-m_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn-v.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn-v_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoSKLearn_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoWeka.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_AutoWeka_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_Recipe.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_Recipe_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_SmartML.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_SmartML_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_TPOT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_bduget_Increasing_for_TPOT_(F1_Score).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/cdf_figures.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/factorial_anova_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/factorial_anova_binary.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/factorial_anova_binary_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/factorial_anova_multi.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/factorial_anova_multi_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/factorial_anova_tpot.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_binary.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_binary_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_multi.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_multi_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_time_budget_atm.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/one_way_anova_time_buget_analysis.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_10_minutes_-_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_10_minutes_-_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_10_minutes_-_TPOT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_30_minutes_-_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_30_minutes_-_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_30_minutes_-_TPOT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_60_minutes_-_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_60_minutes_-_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_between_fc_and_3c_for_60_minutes_-_TPOT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_60_minutes_[AutoSKLearn_-_ATM].pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_60_minutes_[AutoSKLearn_-_TPOT].pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_60_minutes_[TPOT_-_ATM].pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(30-10)_-_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(30-10)_-_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(30-10)_-_TPOT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(60-10)_-_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(60-10)_-_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(60-10)_-_TPOT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(60-30)_-_ATM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(60-30)_-_AutoSKLearn.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/F1_Difference_for_FC_Search_Space_(60-30)_-_TPOT.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/ATM_vs_AutoSkLearn_-_V_(10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/ATM_vs_AutoSkLearn_-_V_(30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/ATM_vs_AutoSkLearn_-_V_(4_Hours).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/ATM_vs_AutoSkLearn_-_V_(60_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(ATM).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(AutoSKLearn).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(AutoSKLearn-e).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(AutoSKLearn-m).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(AutoSKLearn-v).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(AutoWeka).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(SmartML).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Classifiers'_Heat_map_(TPOT).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(4_Hourse).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(4_Hourse).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(60_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(4_Hours).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Ensembling_(60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(4_Hours).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Meta-Learning_(60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(30_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(30_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-60_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(60_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(60_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(60_Min-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(60_Min-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(30_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(30_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-60_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(60_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(60_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(60_Min-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(60_Min-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(30_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(30_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-60_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(60_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(60_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(60_Min-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(60_Min-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(30_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(30_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-60_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-60_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(60_Min-10_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(60_Min-10_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(60_Min-30_Min).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(60_Min-30_Min).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/No_of_datasets_acheived_the_best_performance_wrt_other_time_budgets.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/No_of_times_the_tool_has_acheived_the_best_performance_wrt_other_tools_(F1_Score).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/No_of_times_the_tool_has_acheived_the_worst_performance_wrt_other_tools_(F1_Score).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/bench_figs/bench_figs.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/AccuracyDifferencebetweenfcand3cfor30minutesATM.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/AccuracyDifferencebetweenfcand3cfor30minutesAutoSKLearn.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Analysis/search_space_figs/AccuracyDifferencebetweenfcand3cfor30minutesTPOT.pdf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results-insights-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results_summary-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking/Benchmarking/.ipynb_checkpoints/results_visualization-checkpoint.ipynb" afterDir="false" />
@@ -123,76 +115,25 @@
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/progress.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/recipeBenchmark.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Tools Codes/Recipe/results/Result_iris-Test0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_3C_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_DT_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_RF_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_SVC_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_3C_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_DT_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_RF_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_SVC_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_default_10_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_3C_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_RF_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_SVC_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_default_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_3C_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_DT_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_RF_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_SVC_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_default_30_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_binary_3C_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_binary_DT_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_binary_RF_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_binary_SVC_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_binary_default_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_multi_3C_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_multi_DT_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_multi_RF_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_multi_SVC_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/Results60/tpot_multi_default_60_3x_F1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/atmout.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/extranewskout1.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/extranewskout2.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/extranewskout3.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/extranewskout4.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_search_space/tpot.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/factorial_anova-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis/Analysis-New.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/Analysis-New.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis/factorial_anova.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/factorial_anova.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/Analysis_bench-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/Analysis_bench-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/Analysis_bench.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/Analysis_bench.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/Analysis_bench_wilcoxon.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/Analysis_bench_wilcoxon.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/Analysis_search_space_long.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/Analysis_search_space_long.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(10_Min).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(30_Min).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(4_Hourse).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling_(60_Min).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/No_of_times_the_tool_has_acheived_the_best_performance_w.r.t_other_tools.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/No_of_times_the_tool_has_acheived_the_worst_performance_w.r.t_other_tools.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/bench_figs/No_of_times_the_tool_has_succeeded_to_return_a_model.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/search_space_figs/F1Differencebetweenfcand3cfor30minutesATM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/search_space_figs/F1Differencebetweenfcand3cfor30minutesAutoSKLearn.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis/search_space_figs/F1Differencebetweenfcand3cfor30minutesTPOT.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Complete_Sheet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Complete_Sheet.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/AutoMLBenchmarking" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools Codes/OBOE" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/OBOE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tools Codes/Recipe" beforeDir="false" afterPath="$PROJECT_DIR$/Tools Codes/Recipe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark_all.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_3C_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_DT_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_RF_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_SVC_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_1_acc.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_binary_default_3x_acc.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_3C_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_DT_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_RF_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_SVC_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results10/tpot_multi_default_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_3C_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_DF_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_RF_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_SVC_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary__default_3x_acc.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_binary_default_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_3C_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_DT_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_RF_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_SVC_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/Results30/tpot_multi_default_3x_F1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs_search_space/skout.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/logs_search_space/skout.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/benchmark.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/benchmark.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -409,6 +350,8 @@
       <workItem from="1572623257230" duration="2797000" />
       <workItem from="1574593269354" duration="1929000" />
       <workItem from="1575998665049" duration="7000" />
+      <workItem from="1584015611025" duration="221000" />
+      <workItem from="1586183597119" duration="1057000" />
     </task>
     <task id="LOCAL-00001" summary="Data are parsed automatically into a single sheet. 30 and 60 minute experiments are done.">
       <created>1564417718211</created>
@@ -464,11 +407,6 @@
           <url>file://$PROJECT_DIR$/parser/recipe_parser.py</url>
           <line>3</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/parser/tpot_parser.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
