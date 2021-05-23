@@ -1,0 +1,21 @@
+name: wrangling
+channels:
+  - defaults
+dependencies:
+  - pip=20.*
+  - python=3.8.*
+  - ipykernel
+  - jupyter
+  - pip:
+      - numpy
+      - pandas
+      - scikit-learn
+      - tf-nightly
+      - tensorflow_datasets
+      - matplotlib
+      - seaborn
+      - jupyter
+      - scipy
+      - xgboost
+
+
