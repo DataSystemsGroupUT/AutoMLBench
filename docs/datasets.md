@@ -4,7 +4,7 @@ We used 100 datasets from [OpenML](https://www.openml.org/) repository. We selec
 
 An overview of these characteristics is shown in the following figure. For example, 50% are binary-class datasets and 50% multi-class datasets. To ensure fairness between all of the benchmarked frameworks, we did not apply any preprocessing algorithms over the datasets. This also will avoid any bias impact over the classifiers’ performance.
 
-![test](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/datasets_overview.png?token=ABVXF3TA67NMDR7EHI6RERC6PCYVI)
+![test](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/master/docs/data/datasets_overview.png?token=ABVXF3TA67NMDR7EHI6RERC6PCYVI)
 
 ### Download Datasets
 [Compressed file download link.](https://drive.google.com/file/d/1YjI6UJhf5_VgQjQ1bCNLk3o-d6KY5-3W/) 
