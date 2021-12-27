@@ -1,21 +1,20 @@
-name: wrangling
+name: benchmark
 channels:
   - defaults
 dependencies:
   - pip=20.*
-  - python=3.8.*
+  - python=2.7.*
   - ipykernel
   - jupyter
   - pip:
       - numpy
       - pandas
+#      - auto-sklearn==0.11.0
+#      - tpot==0.11.6
       - scikit-learn
-      - tf-nightly
-      - tensorflow_datasets
-      - matplotlib
-      - seaborn
-      - jupyter
-      - scipy
-      - xgboost
+#      - atm==0.2.2
+#      - matplotlib
+#      - seaborn
+#      - scipy
 
 
