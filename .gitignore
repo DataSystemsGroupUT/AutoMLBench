@@ -1,5 +1,6 @@
-/datasets/*
+datasets/
 #/Dataset_search_space
 #/splits
 #/outputs
-/Datasets.zip
+Datasets.zip
+Tools Codes/autoweka/pyautoweka
