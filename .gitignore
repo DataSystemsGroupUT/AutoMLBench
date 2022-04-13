@@ -1,4 +1,5 @@
-/datasets
-/Dataset_search_space
-/splits
-/outputs
+/datasets/*
+#/Dataset_search_space
+#/splits
+#/outputs
+/Datasets.zip
