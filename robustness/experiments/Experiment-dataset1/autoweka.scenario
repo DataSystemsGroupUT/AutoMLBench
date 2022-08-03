@@ -1,0 +1,11 @@
+algo = "/usr/lib/jvm/java-8-openjdk/jre/bin/java" -Xmx3000m -cp "/home/eldeeb/.cache/Python-Eggs/pyautoweka-.1-py2.7.egg-tmp/pyautoweka/java/autoweka.jar" autoweka.smac.SMACWrapper -prop datasetString=testArff=/home/eldeeb/Documents/AutoMLBenchmarking/AutoMLBenchmarking/robustness/dataset1_train.arff\:type=trainTestArff\:trainArff=/home/eldeeb/Documents/AutoMLBenchmarking/AutoMLBenchmarking/robustness/dataset1_train.arff:instanceGenerator=autoweka.instancegenerators.Default:resultMetric=errorRate -prop executionMode=SMAC:initialIncumbent=RANDOM:initialN=1 -wrapper
+execdir = ./
+deterministic = 1
+run_obj = quality
+overall_obj = mean
+cutoff_time = 120
+tunerTimeout = 360
+outdir = out
+paramfile = autoweka.params
+instance_file = autoweka.instances
+test_instance_file = autoweka.test.instances
