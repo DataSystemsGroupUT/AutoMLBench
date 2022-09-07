@@ -111,4 +111,4 @@ An overview of these characteristics is shown in the following figure. For examp
 |umistfacescropped|[https://www.openml.org/d/41084](https://www.openml.org/d/41084)|10305|575|20|
 |vowel|[https://www.openml.org/d/307](https://www.openml.org/d/307)|14|990|2|
 |wine-quality-red|[https://www.openml.org/d/40691](https://www.openml.org/d/40691)|12|1599|6|
-|aaaData_for_UCI_named|[-](-)|14|10000|2|
+|aaaData_for_UCI_named|[https://www.openml.org/d/43007](https://www.openml.org/d/43007)|14|10000|2|
