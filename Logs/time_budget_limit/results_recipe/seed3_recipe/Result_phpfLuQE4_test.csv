@@ -1,0 +1,2 @@
+accuracyLearning,precisionLearning,recallLearning,f1Learning,accuracyValidation,precisionValidation,recallValidation,f1Validation,accuracyTraining,precisionTraining,recallTraining,f1Training,accuracyTest,precisionTest,recallTest,f1Test,seed,bestPipeline
+1.0,1.0,1.0,1.0,0.8188034188034188,0.8188034188034188,0.8188034188034188,0.8188034188034187,1.0,1.0,1.0,1.0,0.8553846153846154,0.8553846153846154,0.8553846153846154,0.8553846153846154,3.0,SA*  ExtraTreesClassifier entropy False False balanced 45 True None 40239 0.281530 21327 

@@ -3,7 +3,7 @@ import numpy as np
 import glob
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -40,8 +40,8 @@ for fname_tr in glob.glob(path):
     clf = RandomForestClassifier(max_depth=2, random_state=0)
     clf.fit(x_tr, y_tr)
     y_prid = clf.predict(x_ts)
-    acc = accuracy_score(y_ts, y_prid)
-    df_result = df_result.append({'ds_name': fname_tr.rsplit('_', 1)[0], 'acc': acc}, ignore_index = True)
+    f1 = f1_score(y_ts, y_prid, average='micro')
+    df_result = df_result.append({'ds_name': fname_tr.rsplit('_', 1)[0], 'f1': f1}, ignore_index = True)
     
     df_result.to_csv('base_line_results.csv', index=False)
 

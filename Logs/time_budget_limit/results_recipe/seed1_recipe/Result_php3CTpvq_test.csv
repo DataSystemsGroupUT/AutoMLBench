@@ -1,0 +1,2 @@
+accuracyLearning,precisionLearning,recallLearning,f1Learning,accuracyValidation,precisionValidation,recallValidation,f1Validation,accuracyTraining,precisionTraining,recallTraining,f1Training,accuracyTest,precisionTest,recallTest,f1Test,seed,bestPipeline
+1.0,1.0,1.0,1.0,0.6484821428571429,0.6484821428571429,0.6484821428571429,0.6484821428571429,1.0,1.0,1.0,1.0,0.6600862507700962,0.6600862507700962,0.6600862507700962,0.6600862507700962,2.0,Imputer mean # StandardScaler True False # SA*  ExtraTreesClassifier gini False False None 45 False None None 0.224243 50200 

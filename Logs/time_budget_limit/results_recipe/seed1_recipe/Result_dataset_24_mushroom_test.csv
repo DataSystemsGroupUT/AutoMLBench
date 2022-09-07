@@ -1,0 +1,2 @@
+accuracyLearning,precisionLearning,recallLearning,f1Learning,accuracyValidation,precisionValidation,recallValidation,f1Validation,accuracyTraining,precisionTraining,recallTraining,f1Training,accuracyTest,precisionTest,recallTest,f1Test,seed,bestPipeline
+1.0,1.0,1.0,1.0,0.9983588621444202,0.9983588621444202,0.9983588621444202,0.9983588621444202,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,Imputer median # MinMaxScaler # VarianceThreshold # SA*  GaussianNB # RandomForestClassifier entropy False False None 15 False sqrt 7965 0.148509 42813 # GaussianNB # Stacking 

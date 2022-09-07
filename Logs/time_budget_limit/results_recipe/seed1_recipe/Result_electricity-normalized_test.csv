@@ -1,0 +1,2 @@
+accuracyLearning,precisionLearning,recallLearning,f1Learning,accuracyValidation,precisionValidation,recallValidation,f1Validation,accuracyTraining,precisionTraining,recallTraining,f1Training,accuracyTest,precisionTest,recallTest,f1Test,seed,bestPipeline
+1.0,1.0,1.0,1.0,0.9148685759121225,0.9148685759121225,0.9148685759121225,0.9148685759121225,1.0,1.0,1.0,1.0,0.8109992937853108,0.8109992937853108,0.8109992937853108,0.8109992937853108,2.0,SA*  NuSVC linear 3 0.048013 1000 None # RandomForestClassifier entropy False False None 45 False 0.646895 7965 0.148509 42813 # Stacking 

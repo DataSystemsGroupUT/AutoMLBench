@@ -1,0 +1,2 @@
+accuracyLearning,precisionLearning,recallLearning,f1Learning,accuracyValidation,precisionValidation,recallValidation,f1Validation,accuracyTraining,precisionTraining,recallTraining,f1Training,accuracyTest,precisionTest,recallTest,f1Test,seed,bestPipeline
+1.0,1.0,1.0,1.0,0.8188034188034188,0.8188034188034188,0.8188034188034188,0.8188034188034187,1.0,1.0,1.0,1.0,0.8492307692307692,0.8492307692307692,0.8492307692307692,0.8492307692307692,1.0,SA*  ExtraTreesClassifier gini True False None 35 False None None 0.196939 78928 

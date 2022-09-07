@@ -1,0 +1,2 @@
+accuracyLearning,precisionLearning,recallLearning,f1Learning,accuracyValidation,precisionValidation,recallValidation,f1Validation,accuracyTraining,precisionTraining,recallTraining,f1Training,accuracyTest,precisionTest,recallTest,f1Test,seed,bestPipeline
+1.0,1.0,1.0,1.0,0.9635555555555556,0.9635555555555556,0.9635555555555556,0.9635555555555556,1.0,1.0,1.0,1.0,0.8872,0.8872,0.8872,0.8872,2.0,SA*  LogisticCV 7 True 500 sag balanced False 0.064339 # ExtraTreesClassifier gini False False balanced_subsample 40 False 0.646895 None 0.493195 None # Stacking 
