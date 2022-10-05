@@ -54,3 +54,4 @@ public class Main {
 }
 ```
 
+Once all the log files are generated, we can parse them using [specific parsers](https://github.com/DataSystemsGroupUT/AutoMLBench/tree/master/parser). The output is cascaded into the this [sheet](https://github.com/DataSystemsGroupUT/AutoMLBench/blob/master/Complete_Sheet.xlsx).
