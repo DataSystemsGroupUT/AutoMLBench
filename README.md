@@ -84,7 +84,7 @@ for(k in 1:3){
       print(train_file)
       print(test_file)
       # Read and Preprocess Datasets
-      results <- autoRLearn(time_budget, train_file, test_file, nModels=nModels, ensemble=e, seed=seeds[k])
+      results <- autoRLearn(time_budget, train_file, test_file, nModels=nModels, ensemble=e, seed=seeds[k]) # the main entry point to run SmartML
       print(results)
       
       # Save results
@@ -100,3 +100,52 @@ for(k in 1:3){
   }
 }
 ```
+
+The output CSV file will have the results in the same following order:
+```
+Selected Model, Selected Hyper-parameters, Test-Set Performance, ensemble size, time budget, dataset path
+```
+
+You can customize the parameters used in SmartML execution through the following:
+```R
+""""""
+argument maxTime Float numeric of the maximum time budget for reading dataset, preprocessing, calculating meta-features, Algorithm Selection & hyper-parameter tuning process only in minutes(Excluding Model Interpretability) - This is applicable in case of Option = 2 only.
+argument directory String Character of the training dataset directory (SmartML accepts file formats arff/(csv with columns headers) ).
+argument testDirectory String Character of the testing dataset directory (SmartML accepts file formats arff/(csv with columns headers) ).
+argument classCol String Character of the name of the class label column in the dataset (default = 'class').
+argument vRatio Float numeric of the validation set ratio that should be splitted out of the training set for the evaluation process (default = 0.1 --> 10%).
+argument preProcessF vector of string Character containing the name of the preprocessing algorithms (default = c('standardize', 'zv') --> no preprocessing):
+supported values:
+boxcox: apply a Box–Cox transform and values must be non-zero and positive in all features,
+yeo-Johnson: apply a Yeo-Johnson transform, like a BoxCox, but values can be negative,
+zv: remove attributes with a zero variance (all the same value),
+center: subtract mean from values,
+scale: divide values by standard deviation,
+standardize: perform both centering and scaling,
+normalize: normalize values,
+pca: transform data to the principal components,
+ica: transform data to the independent components.
+argument featuresToPreProcess Vector of number of features to perform the feature preprocessing on - In case of empty vector, this means to include all features in the dataset file (default = c()) - This vector should be a subset of code{selectedFeats}.
+argument nComp Integer numeric of Number of components needed if eitherpca" orica" feature preprocessors are needed.
+argument nModels Integer numeric representing the number of classifier algorithms that you want to select based on Meta-Learning and start to tune using Bayesian Optimization (default = 5).
+argument option Integer numeric representing either Classifier Algorithm Selection is needed only = 1 or Algorithm selection with its parameter tuning is required = 2 which is the default value.
+argument featureTypes Vector of either 'numerical' or 'categorical' representing the types of features in the dataset (default = c() --> any factor or character features will be considered as categorical otherwise numerical).
+argument interp Boolean representing if model interpretability (Feature Importance and Interaction) is needed or not (default = FALSE) This option will take more time budget if set to 1.
+argument missingOpr Boolean variable represents either use median/mode imputation for instances with missing values (FALSE) or apply imputation usingMICE library which helps you imputing missing values with plausible data values that are drawn from a distribution specifically designed for each missing datapoint (TRUE).
+argument balance Boolean variable represents if SMOTE class balancing is required or not (default FALSE).
+argument metric Metric of string character to be used in evaluation:
+supported values:
+acc: Accuracy,
+avg-fscore: Average of F-Score of each label,
+avg-recall: Average of Recall of each label,
+avg-precision: Average of Precision of each label,
+fscore: Micro-Average of F-Score of each label,
+recall: Micro-Average of Recall of each label,
+precision: Micro-Average of Precision of each label.
+"""
+autoRLearn <- function(maxTime, directory, testDirectory, classCol = 'class', metric = 'acc',
+                       vRatio = 0.333, preProcessF = c('standardize', 'zv'), ensemble = 1,
+                       featuresToPreProcess = c(), nComp = NA, nModels = 5, option = 2,
+                       featureTypes = c(), interp = FALSE, missingOpr = FALSE, balance = FALSE, seed=22)
+```
+
