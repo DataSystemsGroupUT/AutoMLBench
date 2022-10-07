@@ -4,6 +4,7 @@ In this study, we benchmark the most commonly used tools, i.e., AutoSKLearn,TPOT
 
 ### You can see a detailed results [here](https://datasystemsgrouput.github.io/AutoMLBench/)
 
+### Python-based Frameworks
 To run the python-based frameworks, please refer to the [python folder](https://github.com/DataSystemsGroupUT/AutoMLBench/blob/master/python/). Call the [main.py](https://github.com/DataSystemsGroupUT/AutoMLBench/blob/master/python/main.py), especially the main function, which has the following structure:
 
 ```python
@@ -21,6 +22,8 @@ if __name__ == '__main__':
               time=args.time, model=args.model, dataset_test_file=args.test_file,
               config=args.config)
 ```
+
+### Auto-Weka
 
 To run the Java-based framework, Auto-Weka, please refer to the [Java folder](https://github.com/DataSystemsGroupUT/AutoMLBench/tree/master/java). Call the [Main.java](https://github.com/DataSystemsGroupUT/AutoMLBench/blob/master/java/src/main/java/ee/ut/bigdata/Main.java), especially the main function, which has the following structure:
 
@@ -55,3 +58,45 @@ public class Main {
 ```
 
 Once all the log files are generated, we can parse them using [specific parsers](https://github.com/DataSystemsGroupUT/AutoMLBench/tree/master/parser). The output is cascaded into this [sheet](https://github.com/DataSystemsGroupUT/AutoMLBench/blob/master/Complete_Sheet.xlsx).
+
+### Smart-ML
+To run the R-based framework on the benchmarking datasets, Smart-ML, please refer to the [SmartML Repo](https://github.com/DataSystemsGroupUT/SmartML). Call the the following code snippet to run the benchmark using SmartML:
+
+```R
+install_github("DataSystemsGroupUT/SmartML")
+```
+
+```R
+library(SmartML)
+library(tictoc)
+#################################################################################################
+seeds <- c(1, 2, 3) # Setting the random seeds
+nModelsAll <- c(1, 5) # Size of the output ensemble model - Running without ensemble and with ensemble of size 5
+path_to_csv <- "~/all" # Path to the folder containing the datasets
+files<-list.files(path_to_csv, pattern = "\\.csv$")
+for(k in 1:3){
+  time_budget = 60 * 1 # Time budget in minutes
+  nModels = 5
+  for(e in c(3)){
+    for(i in seq(from=1, to=length(files), by=2)) {
+      train_file = paste0(path_to_csv, "/", files[i+1])
+      test_file = paste0(path_to_csv, "/", files[i])
+      print(train_file)
+      print(test_file)
+      # Read and Preprocess Datasets
+      results <- autoRLearn(time_budget, train_file, test_file, nModels=nModels, ensemble=e, seed=seeds[k])
+      print(results)
+      
+      # Save results
+      results$model = NULL # Remove the fitted model
+      results$pred = NULL # Remove predictions on the test split
+      results$ensemble = e
+      results$time = time_budget
+      results$dataset = train_file
+      results$params = paste(results$params, collapse='#')
+      write.table(results, file="results_60.csv", append = T, sep=',', row.names=F, col.names=F) # Saving the results to a csv file
+      gc()
+    }
+  }
+}
+```
