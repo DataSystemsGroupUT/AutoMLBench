@@ -98,6 +98,18 @@
 |SmartML | 0.001 | 0.58 | 0.052 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0|
 |TPOT | 0.092 | 0.0 | 0.0 | 0.139 | 0.001 | 0.0 | 0.156 | 0.0|
 
+## General performance trends of the benchmark AutoML frameworks
+
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/67991ef92774380b30d7ccdd8ad68eec2c6a44a0/docs/data/pdf2png/No_of_times_the_tool_has_succeeded_to_return_a_model-1.png" alt="Number of successful runs" style="width:750px;"/>
+<figcaption> Number of successful runs</figcaption>
+</figure>
+
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/67991ef92774380b30d7ccdd8ad68eec2c6a44a0/docs/data/pdf2png/box_plot_240%20Min-1.png" alt="Performance of the final pipeline per AutoML framework for 240 minutes" style="width:750px;"/>
+<figcaption>Performance of the final pipeline per AutoML framework for 240 minutes</figcaption>
+</figure>
+
 ## Tools Performance Summary
 
 ![all1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/001SuccessRateAll.png?token=ABVXF3UEUELS3V2WHMHMCNC6PSP5K)
