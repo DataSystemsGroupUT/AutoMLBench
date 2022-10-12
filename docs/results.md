@@ -96,7 +96,7 @@ and tasks over 240 minutes.</figcaption>
 </figure>
 
 <figure>
-<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig6.png" alt="Performance" style="width:750px;"/>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/9b93e5d39a5364f31a0de2e88ebc2e6c48036c21/docs/data/bench_figs/Fig6.png" alt="Performance" style="width:750px;"/>
 <figcaption>The frequency of using different machine learning models by the different AutoML frameworks.</figcaption>
 </figure>
 
