@@ -2,16 +2,6 @@
 # Results
 * [Tables and Results Summaries](#tables-and-results-summaries)
 
-* [Tools Performance Summary](#tools-performance-summary)
-* [Impact of Time Budget](#impact-of-time-budget)
-    * [Impact of Time Budget AutoSKLearn](#impact-of-time-budget-autosklearn)
-    * [Impact of Time Budget TPOT](#impact-of-time-budget-tpot)
-    * [Impact of Time Budget ATM](#impact-of-time-budget-atm)
-* [Impact of Meta-learning](#impact-of-meta-learning)
-* [Impact of Ensembling](#impact-of-ensembling)
-* [Impact of Combined Meta-Learning and Ensembling](#impact-of-combined-meta-learning-and-ensembling)
-* [Impact of Search Space](#impact-of-search-space)
-
 
 
 ## Tables and Results Summaries
@@ -76,89 +66,46 @@
 <figcaption>Performance of the final pipeline per AutoML framework for 240 minutes</figcaption>
 </figure>
 
-## Tools Performance Summary
 
-![all1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/001SuccessRateAll.png?token=ABVXF3UEUELS3V2WHMHMCNC6PSP5K)
-![all2](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/002BestPerformanceAll.png?token=ABVXF3UWZPF5WZFEZY3XKU26PSQOM)
-![all3](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/003WorstPerformanceAll.png?token=ABVXF3WSYE3I67I2ZZRELTC6PSQSI)
-![all4](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/all/004BestTimeBudgetsAll.png?token=ABVXF3QRTGWNGPSMCMF2G5S6PSQV2)
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig3.png" alt="Heatmaps" style="width:750px;"/>
+<figcaption>Heatmaps show the number of datasets a given AutoML framework outperforms another in terms
+of predictive performance over different time budgets. Two frameworks are considered to have the same
+performance on a task if they achieve predictive performance within 1% of each other.</figcaption>
+</figure>
 
+<figure>
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig4a.png" alt="Performance" style="width:750px;"/>
+<figcaption>Performance of the final pipeline on multi-class classification tasks</figcaption>
+</figure>
 
-### Impact of Time Budget
-#### Impact of Time Budget AutoSKLearn
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(30_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(60_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(60_Min-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn_(4_Hours-60_Min).png)
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig4b.png" alt="Performance" style="width:750px;"/>
+<figcaption>Performance of the final pipeline on datasets with large number of features and small
+number of instances.</figcaption>
+</figure>
 
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(30_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(60_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(60_Min-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-m_(4_Hours-60_Min).png)
+<figcaption>Performance of the different AutoML frameworks based on the various characteristics of datasets
+and tasks over 240 minutes.</figcaption>
+</figure>
 
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig5.png" alt="Evaluation" style="width:750px;"/>
+<figcaption>Evaluation of AutoML frameworks on robustness</figcaption>
+</figure>
 
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(30_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(60_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(60_Min-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-e_(4_Hours-60_Min).png)
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig6.png" alt="Performance" style="width:750px;"/>
+<figcaption>The frequency of using different machine learning models by the different AutoML frameworks.</figcaption>
+</figure>
 
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(30_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(60_Min-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-10_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(60_Min-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-30_Min).png)
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_time_budget_Increasing_for_AutoSKLearn-v_(4_Hours-60_Min).png)
-
-#### Impact of Time Budget TPOT
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(30_Min-10_Min)%20-%20Copy-1.png?token=ABVXF3UEV3S5FO4PIVV7AAC6QPHRM)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(60_Min-10_Min)%20-%20Copy-1.png?token=ABVXF3WHE3LOGICBU5CJGF26QPHWM)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-10_Min)%20-%20Copy-1.png?token=ABVXF3SFIIQPECR4B73FAF26QPHXM)
-
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-30_Min)%20-%20Copy-1.png?token=ABVXF3XRUHOTWWXSNJ4XHCC6QPHZY)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_TPOT_(4_Hours-60_Min)%20-%20Copy-1.png?token=ABVXF3UGZM4SMATME3Z4VRS6QPH2O)
-#### Impact of Time Budget ATM
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(30_Min-10_Min)-1.png?token=ABVXF3VOA74AOB4GCLXCVH26QPJNM)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(60_Min-10_Min)-1.png?token=ABVXF3VAMZAMXYJVA7YYPVK6QPJPA)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(4_Hours-10_Min)-1.png?token=ABVXF3UUGYA3U4GVF5KH7MK6QPJR6)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(60_Min-30_Min)-1.png?token=ABVXF3UAI2FWAX6TMVNMQDS6QPJQK)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(4_Hours-30_Min)-1.png?token=ABVXF3VNNIOEAYBXHTMSHIC6QPJT6)
-
-![time](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBenchmarking/master/docs/data/pdf2png/Effect_of_time_budget_Increasing_for_ATM_(4_Hours-60_Min)-1.png?token=ABVXF3S3NA3LLD6YUHBF2PK6QPJV6)
-
-### Impact of Meta-learning
-![meta1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/006MetaLearningEffectAll10min.png)
-![meta2](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/007MetaLearningEffectAll30min.png)
-![meta3](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/008MetaLearningEffectAll60min.png)
-![meta4](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/009MetaLearningEffectAll4hours.png)
-
-
-### Impact of Ensembling
-![ensem1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/011EnsemblingEffectAll10min.png)
-![ensem2](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/012EnsemblingEffectAll30min.png)
-![ensem3](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/013EnsemblingEffectAll60min.png)
-![ensem4](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_Ensembling_(4_Hours).png)
-
-### Impact of Combined Meta-Learning and Ensembling
-![comb1](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(10_Min).png)
-![comb2](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(30_Min).png)
-![comb3](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(60_Min).png)
-![comb4](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/bench_figs/Effect_of_Combined_Meta-Learning_and_Ensembling._(4_Hourse).png)
-
-### Impact of Search Space
-![size](https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLMicroAnalysis/master/docs/data/Accuracyfcand3cfor30minutes.png)
-
+<figure>
+<img src="https://raw.githubusercontent.com/DataSystemsGroupUT/AutoMLBench/37a3b533f6cdc7942555009b4b3ae6475f0b8c80/docs/data/bench_figs/Fig7.png" alt="Performance" style="width:750px;"/>
+<figcaption>The impact of using a static portfolio on each AutoML framework. Green markers represent better
+performance with F C search space, blue markers represent comparable performance with a difference
+less than 1%, red markers represent better performance with 3C search space, yellow markers on the left
+represent failed runs with F C but successful with 3C, yellow markers on the right represent failed runs
+with 3C but successful with F C, and yellow markers in the middle represent failed runs with both F C
+and 3C</figcaption>
+</figure>
